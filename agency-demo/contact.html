@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Norra Studio</title>
 <meta name="description" content="Get in touch with Norra Studio to discuss a brand, web, or digital project.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%274%27 fill=%27%23171717%27/%3E%3Ctext x=%2712%27 y=%2717%27 font-family=%27Arial,sans-serif%27 font-weight=%27800%27 font-size=%2714%27 fill=%27%23a16207%27 text-anchor=%27middle%27%3EN%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -39,14 +41,14 @@
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Contact</p>
-      <h1>Let's start a conversation.</h1>
+      <h1 data-split-words>Let's start a conversation.</h1>
       <p class="hero-sub">Tell us a little about your project and we'll get back to you within one business day.</p>
     </div>
   </section>
 
   <section class="tight">
     <div class="container">
-      <div class="contact-grid">
+      <div class="contact-grid reveal-group">
 
         <form novalidate>
           <div class="grid grid-2" style="gap:16px 24px;">
@@ -77,7 +79,7 @@
             <label for="message">Project details</label>
             <textarea id="message" name="message" required></textarea>
           </div>
-          <button class="btn btn-primary" type="submit">Send message</button>
+          <button class="btn btn-primary magnetic" type="submit">Send message</button>
         </form>
 
         <div>
@@ -146,6 +148,8 @@
   </div>
 </footer>
 
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/main.js"></script>
 </body>
 </html>
