@@ -486,3 +486,152 @@ section.tight { padding-block: var(--space-5); }
   z-index: 100;
 }
 .skip-link:focus { left: var(--space-2); top: var(--space-2); }
+
+/* ==========================================================================
+   Motion layer — reveals, cursor, marquee, blobs, magnetic CTAs
+   ========================================================================== */
+
+/* Reveal targets only start hidden once we know JS (and GSAP) actually ran —
+   html.js is set by an inline head script. Without it, content stays fully
+   visible (no dependency on JS to be readable). The reduced-motion check is
+   a plain media query (not a JS-added class) so there's no timing race. */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] { opacity: 1; transform: none; }
+}
+
+/* Hero headline: each word wrapped in a span for stagger-in.
+   Only offset the words once html.js is set and motion isn't reduced —
+   otherwise the split spans (added by JS) would render normally anyway. */
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+html.js .split-word > span {
+  display: inline-block;
+  transform: translateY(115%);
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .split-word > span { transform: none; }
+}
+
+/* Gradient blobs — decorative, aria-hidden, parallax-driven */
+.blob-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  will-change: transform;
+}
+.blob-a { width: 460px; height: 460px; top: -160px; right: -120px; background: radial-gradient(circle, #d4a94a, transparent 70%); animation: float-a 16s ease-in-out infinite; }
+.blob-b { width: 360px; height: 360px; bottom: -140px; left: -100px; background: radial-gradient(circle, #171717, transparent 70%); opacity: 0.12; animation: float-b 20s ease-in-out infinite; }
+
+@media (max-width: 640px) {
+  .blob-a { width: 260px; height: 260px; top: -90px; right: -90px; opacity: 0.35; }
+  .blob-b { width: 220px; height: 220px; bottom: -100px; left: -90px; opacity: 0.08; }
+}
+
+@keyframes float-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 30px) scale(1.08); }
+}
+@keyframes float-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -20px) scale(1.05); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .blob { animation: none; }
+}
+
+.hero { position: relative; overflow: hidden; }
+.hero .container { position: relative; z-index: 1; }
+
+/* Custom cursor glow (desktop / fine pointer only) */
+.cursor-glow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 28px; height: 28px;
+  margin: -14px 0 0 -14px;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary);
+  pointer-events: none;
+  z-index: 200;
+  opacity: 0;
+  transition: opacity 200ms ease, width 200ms ease, height 200ms ease, margin 200ms ease, background 200ms ease;
+  will-change: transform;
+}
+.cursor-glow.is-active { opacity: 0.9; }
+.cursor-glow.is-hovering {
+  width: 56px; height: 56px;
+  margin: -28px 0 0 -28px;
+  background: var(--color-accent);
+  border-color: transparent;
+  opacity: 0.16;
+}
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-glow { display: none; }
+}
+
+/* Marquee ticker */
+.marquee {
+  border-block: 1px solid var(--color-border);
+  overflow: hidden;
+  padding-block: var(--space-3);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: var(--space-5);
+  animation: marquee-scroll 26s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-track span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3vw, 2.25rem);
+  color: var(--color-muted-foreground);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+.marquee-track span::after {
+  content: "✦";
+  font-size: 0.9rem;
+  color: var(--color-accent);
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* Magnetic CTA (JS applies transform via gsap.quickTo) */
+.magnetic { display: inline-flex; will-change: transform; }
+
+/* Work card image zoom on hover */
+.work-thumb { transition: transform 500ms var(--ease); }
+.work-card:hover .work-thumb { transform: scale(1.07); }
+
+/* Animated stat counters */
+.stat h2 { font-variant-numeric: tabular-nums; }
+
+/* Section reveal stagger helper (children fade in sequence) */
+html.js .reveal-group > * { opacity: 0; transform: translateY(24px); }
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal-group > * { opacity: 1; transform: none; }
+}
