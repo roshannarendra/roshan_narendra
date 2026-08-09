@@ -37,14 +37,14 @@ a{text-decoration:none;color:inherit}
 .video-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .video-wrap video{width:100%;height:100%;object-fit:cover}
 .video-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.2) 45%,rgba(0,0,0,0.82) 100%)}
-.hero-body{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:130px 24px 32px}
+.hero-body{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:112px 24px 28px}
 .avail-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:7px 20px;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:30px}
 .badge-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 10px #4ade80;animation:blink 2s infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
 .hero-h1{font-family:'Marcellus',serif;font-size:clamp(42px,7.5vw,84px);line-height:1.05;letter-spacing:0.01em;margin-bottom:20px;background:linear-gradient(160deg,#fff 0%,rgba(255,255,255,0.85) 55%,rgba(255,255,255,0.45) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-h1 em{font-style:italic;background:linear-gradient(135deg,#c9a96e,#e8d5a3,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:clamp(13px,1.8vw,15px);color:rgba(255,255,255,0.45);line-height:1.9;max-width:460px;margin-bottom:38px;font-weight:300;letter-spacing:0.01em}
-.cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:56px}
+.hero-sub{font-size:clamp(13px,1.8vw,15px);color:rgba(255,255,255,0.45);line-height:1.9;max-width:460px;margin-bottom:32px;font-weight:300;letter-spacing:0.01em}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:44px}
 .btn-w{background:#fff;color:#000;border:none;border-radius:50px;padding:14px 36px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s;font-family:'Poppins',sans-serif;letter-spacing:0.01em}
 .btn-w:hover{opacity:0.88;transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,255,255,0.2)}
 .btn-o{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:50px;padding:13px 30px;font-size:14px;font-weight:500;color:#fff;display:flex;align-items:center;gap:9px;cursor:pointer;transition:all 0.3s;font-family:'Poppins',sans-serif}
@@ -59,14 +59,14 @@ a{text-decoration:none;color:inherit}
 @keyframes floatY{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
 
 /* SECTION */
-.sec{padding:96px 24px;max-width:980px;margin:0 auto}
-.sec-label{font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:14px}
-.sec-h2{font-family:'Marcellus',serif;font-size:clamp(30px,5vw,54px);line-height:1.08;background:linear-gradient(150deg,#fff 0%,rgba(255,255,255,0.5) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:48px}
+.sec{padding:clamp(64px,9vw,88px) 24px;max-width:980px;margin:0 auto}
+.sec-label{font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:12px}
+.sec-h2{font-family:'Marcellus',serif;font-size:clamp(30px,5vw,54px);line-height:1.08;background:linear-gradient(150deg,#fff 0%,rgba(255,255,255,0.5) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:40px}
 .sec-h2 em{font-style:italic;background:linear-gradient(135deg,#c9a96e,#e8d5a3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hr{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent)}
 
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:52px;align-items:start}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:start}
 .about-p{color:rgba(255,255,255,0.48);font-size:14px;line-height:1.9;margin-bottom:18px;font-weight:300}
 .about-p strong{color:rgba(255,255,255,0.85);font-weight:600}
 .cinfo{display:flex;flex-direction:column;gap:12px;margin-top:28px}
@@ -77,7 +77,9 @@ a{text-decoration:none;color:inherit}
 .edu-box p{font-size:12px;color:rgba(255,255,255,0.3);font-weight:300}
 .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
 .pill{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:50px;padding:6px 16px;font-size:12px;color:rgba(255,255,255,0.55);font-weight:400}
-.about-img{width:100%;border-radius:20px;object-fit:cover;height:220px;display:block;margin-bottom:11px;filter:brightness(0.85) saturate(0.9)}
+.about-img-wrap{height:240px;margin-bottom:11px}
+.about-img{filter:brightness(0.82) saturate(0.9);transition:filter .6s}
+.about-img-wrap:hover .about-img{filter:brightness(0.95) saturate(1)}
 
 /* SKILLS */
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -88,7 +90,7 @@ a{text-decoration:none;color:inherit}
 .sk-tag:hover{background:rgba(255,255,255,0.09);color:#fff;border-color:rgba(255,255,255,0.18)}
 
 /* EXPERIENCE */
-.exp-item{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.exp-item{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
 .exp-item:first-child{border-top:1px solid rgba(255,255,255,0.05)}
 .exp-date{font-size:11px;color:rgba(255,255,255,0.25);padding-top:4px;line-height:1.6;font-weight:400}
 .exp-role{font-family:'Marcellus',serif;font-size:17px;color:rgba(255,255,255,0.88);margin-bottom:3px}
@@ -118,7 +120,9 @@ a{text-decoration:none;color:inherit}
 .shop-list{list-style:none;display:flex;flex-direction:column;gap:8px}
 .shop-list li{font-size:11.5px;color:rgba(255,255,255,0.33);line-height:1.55;display:flex;gap:8px;font-weight:300}
 .shop-list li::before{content:"→";color:rgba(255,255,255,0.18);flex-shrink:0}
-.shop-banner{width:100%;height:140px;object-fit:cover;border-radius:12px;margin-bottom:22px;filter:brightness(0.6) saturate(0.7)}
+.pimg-wrap.shop-banner-wrap{height:150px;border-radius:12px;margin-bottom:22px}
+.shop-banner{filter:brightness(0.6) saturate(0.7);transition:filter .6s}
+.shop-banner-wrap:hover .shop-banner{filter:brightness(0.75) saturate(0.85)}
 
 /* INTERNSHIPS */
 .intern-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:11px}
@@ -129,7 +133,7 @@ a{text-decoration:none;color:inherit}
 .intern-dur{font-size:10px;color:rgba(255,255,255,0.25);font-weight:300}
 
 /* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
 .contact-sub{color:rgba(255,255,255,0.38);font-size:14px;line-height:1.85;margin-bottom:28px;font-weight:300}
 .cc{border-radius:14px;padding:17px 22px;display:flex;align-items:center;gap:15px;margin-bottom:10px;transition:border-color 0.3s,background 0.3s}
 .cc:hover{border-color:rgba(255,255,255,0.16);background:rgba(255,255,255,0.04)}
@@ -163,6 +167,50 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
 .band-inner span.dot{color:rgba(255,255,255,0.08)}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(46px);transition:opacity 1s cubic-bezier(.16,.84,.44,1),transform 1s cubic-bezier(.16,.84,.44,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-stagger>*{opacity:0;transform:translateY(32px);transition:opacity .75s cubic-bezier(.16,.84,.44,1),transform .75s cubic-bezier(.16,.84,.44,1)}
+.reveal-stagger.in>*{opacity:1;transform:translateY(0)}
+.reveal-stagger.in>*:nth-child(1){transition-delay:.05s}
+.reveal-stagger.in>*:nth-child(2){transition-delay:.12s}
+.reveal-stagger.in>*:nth-child(3){transition-delay:.19s}
+.reveal-stagger.in>*:nth-child(4){transition-delay:.26s}
+.reveal-stagger.in>*:nth-child(5){transition-delay:.33s}
+.reveal-stagger.in>*:nth-child(n+6){transition-delay:.4s}
+
+/* SPLIT-WORD TEXT ANIMATION */
+.split-word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.1em;margin-bottom:-0.1em}
+.split-word span{display:inline-block;transform:translateY(112%);opacity:0;transition:transform .95s cubic-bezier(.16,.84,.44,1),opacity .8s ease}
+.split-ready .split-word span{transform:translateY(0);opacity:1}
+/* gradient text-fill only paints on the element that owns the background, so the
+   inner animation spans need the same gradient re-applied or the text renders invisible */
+.hero-h1 .split-word span{background:linear-gradient(160deg,#fff 0%,rgba(255,255,255,0.85) 55%,rgba(255,255,255,0.45) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-h1 em .split-word span{background:linear-gradient(135deg,#c9a96e,#e8d5a3,#c9a96e);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
+.sec-h2 .split-word span{background:linear-gradient(150deg,#fff 0%,rgba(255,255,255,0.5) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sec-h2 em .split-word span{background:linear-gradient(135deg,#c9a96e,#e8d5a3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:220% 50%}}
+
+/* DECORATIVE PARALLAX ORBS */
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;will-change:transform}
+.orb-1{width:440px;height:440px;background:radial-gradient(circle,rgba(201,169,110,0.16),transparent 70%);top:-140px;right:-120px}
+.orb-2{width:360px;height:360px;background:radial-gradient(circle,rgba(255,255,255,0.05),transparent 70%);bottom:-100px;left:-80px}
+.sec{position:relative}
+.orb-sec{width:320px;height:320px;background:radial-gradient(circle,rgba(201,169,110,0.09),transparent 70%);top:0;right:-80px;z-index:0}
+.sec>*{position:relative;z-index:1}
+
+/* TILT + SPOTLIGHT CARDS */
+.proj-card,.shop-card,.intern-card{position:relative;transform-style:preserve-3d;will-change:transform;transition:transform .25s cubic-bezier(.16,.84,.44,1),box-shadow .35s,border-color .35s}
+.proj-card::after,.shop-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,0.1),transparent 65%);opacity:0;transition:opacity .4s;pointer-events:none;z-index:3}
+.proj-card:hover::after,.shop-card:hover::after{opacity:1}
+
+/* PARALLAX IMAGE WRAP (about / banners) */
+.pimg-wrap{position:relative;overflow:hidden;border-radius:20px}
+.pimg-wrap img{position:absolute;top:-16%;left:0;width:100%;height:132%;object-fit:cover;will-change:transform}
+
+/* MAGNETIC BUTTONS */
+.btn-w,.btn-o,.nav-hire{will-change:transform}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   .nav-links,.nav-hire{display:none}
@@ -174,7 +222,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
   .intern-grid{grid-template-columns:repeat(3,1fr)}
   .stats-bar{grid-template-columns:repeat(2,1fr)}
   .stat:nth-child(2)::after{display:none}
-  .sec{padding:72px 20px}
+  .sec{padding:56px 20px}
   .exp-item{grid-template-columns:1fr}
 }
 @media(max-width:480px){
@@ -220,6 +268,8 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
     <video id="bgv" autoplay muted loop playsinline></video>
     <div class="video-overlay"></div>
   </div>
+  <div class="orb orb-1" data-parallax-orb="0.06"></div>
+  <div class="orb orb-2" data-parallax-orb="-0.04"></div>
   <div class="hero-body">
     <div class="avail-badge"><span class="badge-dot"></span>Available for Projects</div>
     <h1 class="hero-h1">Crafting visuals<br/>that <em>convert</em></h1>
@@ -273,9 +323,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
 <!-- ABOUT -->
 <section id="about">
   <div class="sec">
-    <p class="sec-label">About Me</p>
+    <div class="orb orb-sec" data-parallax-orb="0.05"></div>
+    <p class="sec-label reveal">About Me</p>
     <h2 class="sec-h2">The bridge between<br/><em>creative and commercial</em></h2>
-    <div class="about-grid">
+    <div class="about-grid reveal-stagger">
       <div>
         <p class="about-p">Hey, I'm Roshan — a <strong>3D Artist, Motion Designer, and Brand Manager</strong> based in Gurgaon. Over the past 4+ years I've worked with fintech platforms, security enterprises, e-commerce brands, and fashion labels — helping them tell their story through cinematic 3D and motion.</p>
         <p class="about-p">Beyond 3D, I run complete <strong>Shopify storefronts</strong> — from theme customization and product setup to Meta Pixel, ads, and ROAS optimization. I'm the bridge between creative and commercial.</p>
@@ -295,7 +346,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
         </div>
       </div>
       <div>
-        <img class="about-img" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="3D Design workspace"/>
+        <div class="pimg-wrap about-img-wrap"><img class="about-img" data-parallax="0.18" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="3D Design workspace"/></div>
         <div class="edu-box glass">
           <p class="edu-lbl">Education</p>
           <h4>B.Sc Animation</h4>
@@ -320,9 +371,9 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
 <!-- SKILLS -->
 <section id="skills">
   <div class="sec">
-    <p class="sec-label">Expertise</p>
+    <p class="sec-label reveal">Expertise</p>
     <h2 class="sec-h2">Every tool in the <em>arsenal</em></h2>
-    <div class="skills-grid">
+    <div class="skills-grid reveal-stagger">
       <div class="sk-group glass">
         <h3>3D &amp; Rendering</h3>
         <div class="sk-tags">
@@ -353,7 +404,9 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
       </div>
     </div>
     <!-- Skills visual banner -->
-    <img src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?w=980&q=80" alt="Creative tools and workspace" style="width:100%;height:180px;object-fit:cover;border-radius:18px;margin-top:28px;filter:brightness(0.45) saturate(0.7);object-position:center 40%"/>
+    <div class="pimg-wrap" style="height:180px;border-radius:18px;margin-top:28px">
+      <img data-parallax="0.14" src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?w=980&q=80" alt="Creative tools and workspace" style="filter:brightness(0.45) saturate(0.7);object-position:center 40%;transition:filter .6s"/>
+    </div>
   </div>
 </section>
 
@@ -362,9 +415,9 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="sec">
-    <p class="sec-label">Experience</p>
+    <p class="sec-label reveal">Experience</p>
     <h2 class="sec-h2">4+ years of <em>impact</em></h2>
-    <div>
+    <div class="reveal-stagger">
       <div class="exp-item">
         <div class="exp-date">Sept 2024 – Present</div>
         <div>
@@ -406,9 +459,9 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
 <!-- WORK -->
 <section id="work">
   <div class="sec">
-    <p class="sec-label">Selected Work</p>
+    <p class="sec-label reveal">Selected Work</p>
     <h2 class="sec-h2">Real brands. <em>Real results.</em></h2>
-    <div class="proj-grid">
+    <div class="proj-grid reveal-stagger">
       <div class="proj-card">
         <div class="proj-thumb">
           <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Bajaj Electricals 3D"/>
@@ -451,11 +504,12 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
 <!-- SHOPIFY -->
 <section id="ecommerce">
   <div class="sec">
-    <p class="sec-label">eCommerce</p>
+    <div class="orb orb-sec" data-parallax-orb="0.05"></div>
+    <p class="sec-label reveal">eCommerce</p>
     <h2 class="sec-h2">Shopify stores built <em>to sell</em></h2>
-    <img class="shop-banner" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=980&q=80" alt="eCommerce and Shopify"/>
+    <div class="pimg-wrap shop-banner-wrap"><img class="shop-banner" data-parallax="0.12" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=980&q=80" alt="eCommerce and Shopify"/></div>
     <p class="shop-intro">End-to-end Shopify development — theme, catalogue, SEO, Meta Pixel, ad campaigns, and performance tracking. From zero to launch with Meta Ads driving ROAS from day one.</p>
-    <div class="shop-grid">
+    <div class="shop-grid reveal-stagger">
       <div class="shop-card glass">
         <div class="shop-name">Velvotic</div>
         <ul class="shop-list">
@@ -501,9 +555,9 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
 <!-- INTERNSHIPS -->
 <section id="internships">
   <div class="sec">
-    <p class="sec-label">Early Career</p>
+    <p class="sec-label reveal">Early Career</p>
     <h2 class="sec-h2">Internships that <em>shaped my craft</em></h2>
-    <div class="intern-grid">
+    <div class="intern-grid reveal-stagger">
       <div class="intern-card glass">
         <div class="intern-n">01</div>
         <div class="intern-name">PeakPals</div>
@@ -538,9 +592,9 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
 <!-- CONTACT -->
 <section id="contact">
   <div class="sec">
-    <p class="sec-label">Contact</p>
+    <p class="sec-label reveal">Contact</p>
     <h2 class="sec-h2">Let's build something <em>great</em></h2>
-    <div class="contact-grid">
+    <div class="contact-grid reveal-stagger">
       <div>
         <p class="contact-sub">Have a project in mind? Whether it's a 3D campaign, brand identity, or a Shopify store — I'm ready to bring it to life. Let's talk.</p>
         <a href="mailto:roshandra06@gmail.com" class="cc glass">
@@ -561,7 +615,9 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
           </div>
           <div><div class="cc-label">Location</div><div class="cc-val">Sector 57, Gurgaon</div></div>
         </div>
-        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80" alt="Creative workspace" style="width:100%;height:150px;object-fit:cover;border-radius:16px;margin-top:16px;filter:brightness(0.5) saturate(0.7)"/>
+        <div class="pimg-wrap" style="height:150px;border-radius:16px;margin-top:16px">
+          <img data-parallax="0.12" src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80" alt="Creative workspace" style="filter:brightness(0.5) saturate(0.7);transition:filter .6s"/>
+        </div>
       </div>
       <div class="cf">
         <input type="text" id="fn" placeholder="Your Name"/>
@@ -645,6 +701,116 @@ window.addEventListener('scroll', function() {
     v.style.transform = 'translateY(' + (window.scrollY * 0.18) + 'px)';
   }
 }, { passive: true });
+
+/* ---------- ANIMATED TEXT: split headings into words ---------- */
+function splitWords(el) {
+  function walk(node) {
+    if (node.nodeType === 3) {
+      var frag = document.createDocumentFragment();
+      var parts = node.textContent.split(/(\s+)/);
+      parts.forEach(function(p) {
+        if (p.trim() === '') {
+          frag.appendChild(document.createTextNode(p));
+        } else {
+          var w = document.createElement('span');
+          w.className = 'split-word';
+          var inner = document.createElement('span');
+          inner.textContent = p;
+          w.appendChild(inner);
+          frag.appendChild(w);
+        }
+      });
+      node.parentNode.replaceChild(frag, node);
+    } else if (node.nodeType === 1 && node.tagName !== 'BR') {
+      Array.prototype.slice.call(node.childNodes).forEach(walk);
+    }
+  }
+  Array.prototype.slice.call(el.childNodes).forEach(walk);
+  var words = el.querySelectorAll('.split-word span');
+  words.forEach(function(s, idx) { s.style.transitionDelay = (idx * 0.045) + 's'; });
+}
+document.querySelectorAll('.hero-h1, .sec-h2').forEach(splitWords);
+
+/* Hero heading animates in on load */
+window.addEventListener('load', function() {
+  requestAnimationFrame(function() {
+    setTimeout(function() {
+      var h = document.querySelector('.hero-h1');
+      if (h) h.classList.add('split-ready');
+    }, 250);
+  });
+});
+
+/* ---------- SCROLL REVEAL (headings, staggered groups) ---------- */
+var revealTargets = document.querySelectorAll('.reveal, .reveal-stagger, .sec-h2');
+var revealIO = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      if (entry.target.classList.contains('sec-h2')) entry.target.classList.add('split-ready');
+      revealIO.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+revealTargets.forEach(function(el) { revealIO.observe(el); });
+
+/* ---------- TILT + SPOTLIGHT on project / shop / intern cards ---------- */
+document.querySelectorAll('.proj-card, .shop-card, .intern-card').forEach(function(card) {
+  card.addEventListener('mousemove', function(e) {
+    var r = card.getBoundingClientRect();
+    var x = e.clientX - r.left, y = e.clientY - r.top;
+    card.style.setProperty('--mx', x + 'px');
+    card.style.setProperty('--my', y + 'px');
+    var rx = ((y / r.height) - 0.5) * -6;
+    var ry = ((x / r.width) - 0.5) * 6;
+    card.style.transform = 'perspective(700px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+  });
+  card.addEventListener('mouseleave', function() {
+    card.style.transform = '';
+  });
+});
+
+/* ---------- MAGNETIC BUTTONS ---------- */
+document.querySelectorAll('.btn-w, .btn-o, .nav-hire').forEach(function(btn) {
+  btn.addEventListener('mousemove', function(e) {
+    var r = btn.getBoundingClientRect();
+    var x = e.clientX - r.left - r.width / 2, y = e.clientY - r.top - r.height / 2;
+    btn.style.transform = 'translate(' + (x * 0.18) + 'px,' + (y * 0.3) + 'px)';
+  });
+  btn.addEventListener('mouseleave', function() { btn.style.transform = ''; });
+});
+
+/* ---------- PARALLAX: images + decorative orbs ---------- */
+var parallaxImgs = document.querySelectorAll('img[data-parallax]');
+var parallaxOrbs = document.querySelectorAll('[data-parallax-orb]');
+var parallaxTicking = false;
+function updateParallax() {
+  var vh = window.innerHeight;
+  parallaxImgs.forEach(function(img) {
+    var wrap = img.parentElement;
+    var rect = wrap.getBoundingClientRect();
+    if (rect.bottom < -200 || rect.top > vh + 200) return;
+    var speed = parseFloat(img.getAttribute('data-parallax')) || 0.15;
+    var progress = (rect.top + rect.height / 2 - vh / 2) / vh;
+    var maxShift = rect.height * speed;
+    img.style.transform = 'translateY(' + (progress * maxShift * -1) + 'px)';
+  });
+  parallaxOrbs.forEach(function(orb) {
+    var rect = orb.getBoundingClientRect();
+    if (rect.bottom < -300 || rect.top > vh + 300) return;
+    var speed = parseFloat(orb.getAttribute('data-parallax-orb')) || 0.05;
+    var progress = rect.top + rect.height / 2 - vh / 2;
+    orb.style.transform = 'translateY(' + (progress * speed) + 'px)';
+  });
+  parallaxTicking = false;
+}
+window.addEventListener('scroll', function() {
+  if (!parallaxTicking) {
+    requestAnimationFrame(updateParallax);
+    parallaxTicking = true;
+  }
+}, { passive: true });
+updateParallax();
 </script>
 </body>
 </html>
