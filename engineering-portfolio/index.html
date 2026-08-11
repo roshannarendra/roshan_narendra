@@ -14,6 +14,14 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
+<div id="preloader" class="preloader" aria-hidden="true">
+  <span class="preloader-mark">RN<span class="nav-mark-dot">.</span></span>
+</div>
+<noscript><style>#preloader{display:none}</style></noscript>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
 <header id="nav">
   <div class="nav-inner">
     <a href="#hero" class="nav-mark">RN<span class="nav-mark-dot">.</span></a>
@@ -41,20 +49,32 @@
   <!-- ============ HERO ============ -->
   <section id="hero" class="section hero">
     <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-spotlight" id="heroSpotlight" aria-hidden="true"></div>
     <div class="container hero-inner">
-      <p class="eyebrow reveal"><span class="eyebrow-dot"></span>Systems &amp; Backend Engineering</p>
-      <h1 class="hero-h1 reveal">Engineering High&#8209;Performance Systems</h1>
-      <p class="hero-sub reveal">I design, build, and harden the infrastructure and interfaces that hold up under real load — distributed backends, low-latency APIs, and the tooling that keeps them observable. Precision over noise, at every layer of the stack.</p>
-      <div class="hero-cta reveal">
-        <a href="#contact" class="btn btn-primary">
-          Let's Connect
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8h9M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <p class="eyebrow"><span class="eyebrow-dot"></span>Systems &amp; Backend Engineering</p>
+      <h1 class="hero-h1">Engineering High&#8209;Performance Systems</h1>
+      <p class="hero-sub">I design, build, and harden the infrastructure and interfaces that hold up under real load — distributed backends, low-latency APIs, and the tooling that keeps them observable. Precision over noise, at every layer of the stack.</p>
+      <div class="hero-cta">
+        <div class="magnetic-wrap" id="magneticCta">
+          <a href="#contact" class="btn btn-primary">
+            Let's Connect
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8h9M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="hero-meta reveal">
-        <div class="meta-item"><span class="meta-n">99.98%</span><span class="meta-l">Uptime target</span></div>
-        <div class="meta-item"><span class="meta-n">&lt;80ms</span><span class="meta-l">p95 API latency</span></div>
-        <div class="meta-item"><span class="meta-n">08+</span><span class="meta-l">Years shipping systems</span></div>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-n" data-count-to="99.98" data-decimals="2" data-suffix="%">0%</span>
+          <span class="meta-l">Uptime target</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-n" data-count-to="80" data-prefix="&lt;" data-suffix="ms">&lt;0ms</span>
+          <span class="meta-l">p95 API latency</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-n" data-count-to="8" data-pad="2" data-suffix="+">00+</span>
+          <span class="meta-l">Years shipping systems</span>
+        </div>
       </div>
     </div>
     <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
@@ -69,7 +89,7 @@
       <p class="section-kicker reveal">01 / About</p>
       <div class="about-grid">
 
-        <div class="about-col reveal">
+        <div class="about-col">
           <h2 class="section-h2">Execution Principles</h2>
           <p class="about-lead">The working philosophy behind every system I ship — not slogans, constraints I actually build against.</p>
           <ol class="principles">
@@ -104,7 +124,7 @@
           </ol>
         </div>
 
-        <div class="about-col reveal">
+        <div class="about-col">
           <h2 class="section-h2">Technical Matrix</h2>
           <p class="about-lead">Core tooling across the stack, grouped by where it earns its place.</p>
           <div class="matrix">
@@ -150,7 +170,7 @@
 
       <div class="project-grid">
 
-        <article class="project-card reveal" tabindex="0" data-project="orchestrator">
+        <article class="project-card" tabindex="0" data-project="orchestrator">
           <div class="project-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
           </div>
@@ -162,7 +182,7 @@
           </button>
         </article>
 
-        <article class="project-card reveal" tabindex="0" data-project="observability">
+        <article class="project-card" tabindex="0" data-project="observability">
           <div class="project-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-6 4 4 8-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="6" r="1.5" fill="currentColor"/></svg>
           </div>
@@ -174,7 +194,7 @@
           </button>
         </article>
 
-        <article class="project-card reveal" tabindex="0" data-project="edge-cache">
+        <article class="project-card" tabindex="0" data-project="edge-cache">
           <div class="project-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.5"/></svg>
           </div>
@@ -186,7 +206,7 @@
           </button>
         </article>
 
-        <article class="project-card reveal" tabindex="0" data-project="ingestion">
+        <article class="project-card" tabindex="0" data-project="ingestion">
           <div class="project-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
@@ -198,7 +218,7 @@
           </button>
         </article>
 
-        <article class="project-card reveal" tabindex="0" data-project="job-queue">
+        <article class="project-card" tabindex="0" data-project="job-queue">
           <div class="project-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="10" width="18" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="16" width="12" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
           </div>
@@ -210,7 +230,7 @@
           </button>
         </article>
 
-        <article class="project-card reveal" tabindex="0" data-project="search-index">
+        <article class="project-card" tabindex="0" data-project="search-index">
           <div class="project-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M20 20l-4.9-4.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
@@ -268,7 +288,13 @@
             <span class="btn-label">Send Message</span>
           </button>
 
-          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          <div class="form-status-row">
+            <svg class="success-check" id="successCheck" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.4" />
+              <path class="success-check-mark" d="M5.2 9.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </div>
         </form>
       </div>
     </div>
@@ -297,6 +323,8 @@
   </div>
 </div>
 
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/main.js"></script>
 </body>
 </html>

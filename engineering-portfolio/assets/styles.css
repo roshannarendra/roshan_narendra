@@ -142,22 +142,82 @@ img { max-width: 100%; display: block; }
 }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
+/* ============ PRELOADER ============ */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.preloader-mark {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--fg);
+  opacity: 0;
+}
+.preloader[hidden] { display: none; }
+
+/* ============ CUSTOM CURSOR (fine pointer only, see main.js) ============ */
+.cursor-dot, .cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 250;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  will-change: transform;
+}
+.cursor-dot {
+  width: 6px; height: 6px;
+  background: var(--accent-strong);
+}
+.cursor-ring {
+  width: 34px; height: 34px;
+  border: 1px solid var(--border-hover);
+  transition: width 0.25s var(--ease), height 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+body.cursor-ready .cursor-dot,
+body.cursor-ready .cursor-ring { opacity: 1; }
+body.cursor-ready.cursor-hover .cursor-ring {
+  width: 54px; height: 54px;
+  background: var(--accent-dim);
+  border-color: var(--accent);
+}
+body.cursor-ready { cursor: none; }
+body.cursor-ready a,
+body.cursor-ready button,
+body.cursor-ready input,
+body.cursor-ready textarea { cursor: none; }
+
 /* ============ NAV ============ */
 #nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
   background: rgba(10, 12, 15, 0.82);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid transparent;
+  transition: background 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+#nav.is-scrolled {
+  background: rgba(10, 12, 15, 0.96);
+  border-bottom-color: var(--border);
 }
 .nav-inner {
   max-width: var(--container);
   margin: 0 auto;
   padding: 20px var(--space-4);
+  transition: padding 0.35s var(--ease);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+#nav.is-scrolled .nav-inner { padding: 13px var(--space-4); }
 .nav-mark {
   font-family: var(--font-mono);
   font-size: 15px;
@@ -245,6 +305,19 @@ img { max-width: 100%; display: block; }
   mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 0%, transparent 75%);
   opacity: 0.5;
 }
+/* Cursor-reactive spotlight — position driven by --spotlight-x/-y, set in main.js */
+.hero-spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    560px circle at var(--spotlight-x, 50%) var(--spotlight-y, 32%),
+    var(--accent-dim) 0%,
+    transparent 62%
+  );
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+}
+.hero-spotlight.is-active { opacity: 1; }
 .hero-inner { position: relative; z-index: 1; max-width: 820px; }
 
 .eyebrow {
@@ -277,6 +350,11 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.01em;
   margin-bottom: var(--space-4);
   max-width: 15ch;
+}
+/* Split into .word spans at runtime (main.js) for the load-in stagger */
+.hero-h1 .word {
+  display: inline-block;
+  will-change: transform, opacity, filter;
 }
 
 .hero-sub {
@@ -316,6 +394,10 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 14px 34px -12px rgba(108, 147, 255, 0.45);
 }
 .btn-primary:hover svg { transform: translateX(3px); }
+
+/* Magnetic pull (main.js) is applied to this wrapper, never the .btn itself,
+   so it never fights the button's own CSS hover transform. */
+.magnetic-wrap { display: inline-block; will-change: transform; }
 
 .hero-meta {
   display: flex;
@@ -421,6 +503,7 @@ img { max-width: 100%; display: block; }
   flex-direction: column;
   align-items: flex-start;
   transition: background 0.3s var(--ease);
+  will-change: transform;
 }
 .project-card:hover, .project-card:focus-within { background: var(--surface); }
 
@@ -535,14 +618,31 @@ img { max-width: 100%; display: block; }
 }
 .btn-submit[disabled] { opacity: 0.6; cursor: not-allowed; }
 
+.form-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 18px;
+}
 .form-status {
   font-family: var(--font-mono);
   font-size: 13px;
   text-align: center;
-  min-height: 18px;
 }
 .form-status[data-state="success"] { color: var(--success); }
 .form-status[data-state="error"] { color: var(--error); }
+
+.success-check {
+  color: var(--success);
+  flex-shrink: 0;
+  opacity: 0;
+}
+.success-check circle { opacity: 0.35; }
+.success-check-mark {
+  stroke-dasharray: 12;
+  stroke-dashoffset: 12;
+}
 
 /* ============ FOOTER ============ */
 .footer { border-top: 1px solid var(--border); padding: var(--space-5) 0; }
@@ -579,9 +679,10 @@ img { max-width: 100%; display: block; }
   overflow-y: auto;
   padding: var(--space-6);
   position: relative;
-  animation: modalIn 0.3s var(--ease);
+  /* Open/close transition is driven by GSAP (main.js) so it can be sequenced
+     with the backdrop and staggered content; falls back to instant show/hide
+     if GSAP fails to load. */
 }
-@keyframes modalIn { from { opacity: 0; transform: translateY(12px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
 .modal-close {
   position: absolute;
