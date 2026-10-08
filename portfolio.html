@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Roshan Narendra — 3D Designer & Brand Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#000;color:#fff;font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:#fff;color:#000}
+a{text-decoration:none;color:inherit}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:3px}
+
+.glass{background:rgba(255,255,255,0.03);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.08)}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 20px;transition:padding 0.4s}
+.nav-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;border-radius:50px;padding:11px 26px;background:rgba(0,0,0,0.45);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08)}
+.nav-logo{font-family:'Marcellus',serif;font-size:20px;color:#fff;letter-spacing:0.02em}
+.nav-links{display:flex;gap:30px}
+.nav-links a{font-size:13px;font-weight:400;color:rgba(255,255,255,0.5);transition:color 0.3s;letter-spacing:0.02em}
+.nav-links a:hover{color:#fff}
+.nav-hire{background:linear-gradient(135deg,rgba(255,255,255,0.12),rgba(255,255,255,0.06));border:1px solid rgba(255,255,255,0.15);border-radius:50px;padding:9px 26px;font-size:13px;font-weight:500;color:#fff;transition:all 0.3s;font-family:'Poppins',sans-serif}
+.nav-hire:hover{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.25)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:1.5px;background:#fff;border-radius:2px;display:block}
+#mobile-nav{display:none;position:fixed;inset:0;z-index:99;background:rgba(0,0,0,0.97);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:28px}
+#mobile-nav a{font-family:'Marcellus',serif;font-size:28px;color:rgba(255,255,255,0.7);transition:color 0.3s}
+#mobile-nav a:hover{color:#fff}
+.mnav-close{position:absolute;top:24px;right:28px;background:none;border:none;color:rgba(255,255,255,0.4);font-size:32px;cursor:pointer;line-height:1;font-family:'Poppins',sans-serif}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden}
+.video-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.video-wrap video{width:100%;height:100%;object-fit:cover}
+.video-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.2) 45%,rgba(0,0,0,0.82) 100%)}
+.hero-body{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:130px 24px 32px}
+.avail-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:7px 20px;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:30px}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 10px #4ade80;animation:blink 2s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+.hero-h1{font-family:'Marcellus',serif;font-size:clamp(42px,7.5vw,84px);line-height:1.05;letter-spacing:0.01em;margin-bottom:20px;background:linear-gradient(160deg,#fff 0%,rgba(255,255,255,0.85) 55%,rgba(255,255,255,0.45) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-h1 em{font-style:italic;background:linear-gradient(135deg,#c9a96e,#e8d5a3,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(13px,1.8vw,15px);color:rgba(255,255,255,0.45);line-height:1.9;max-width:460px;margin-bottom:38px;font-weight:300;letter-spacing:0.01em}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:56px}
+.btn-w{background:#fff;color:#000;border:none;border-radius:50px;padding:14px 36px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s;font-family:'Poppins',sans-serif;letter-spacing:0.01em}
+.btn-w:hover{opacity:0.88;transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,255,255,0.2)}
+.btn-o{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:50px;padding:13px 30px;font-size:14px;font-weight:500;color:#fff;display:flex;align-items:center;gap:9px;cursor:pointer;transition:all 0.3s;font-family:'Poppins',sans-serif}
+.btn-o:hover{background:rgba(255,255,255,0.12);transform:translateY(-2px)}
+.stats-row{position:relative;z-index:2;padding:0 20px 48px;display:flex;justify-content:center}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);max-width:680px;width:100%;border-radius:22px;padding:22px 0}
+.stat{text-align:center;padding:10px 14px;position:relative}
+.stat:not(:last-child)::after{content:'';position:absolute;right:0;top:15%;height:70%;width:1px;background:rgba(255,255,255,0.07)}
+.stat-n{font-family:'Marcellus',serif;font-size:clamp(26px,3vw,36px);color:#fff;line-height:1}
+.stat-l{font-size:10px;color:rgba(255,255,255,0.3);font-weight:400;letter-spacing:0.1em;text-transform:uppercase;margin-top:5px}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,0.22);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:6px;animation:floatY 2.2s ease-in-out infinite}
+@keyframes floatY{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+
+/* SECTION */
+.sec{padding:96px 24px;max-width:980px;margin:0 auto}
+.sec-label{font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:14px}
+.sec-h2{font-family:'Marcellus',serif;font-size:clamp(30px,5vw,54px);line-height:1.08;background:linear-gradient(150deg,#fff 0%,rgba(255,255,255,0.5) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:48px}
+.sec-h2 em{font-style:italic;background:linear-gradient(135deg,#c9a96e,#e8d5a3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hr{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:52px;align-items:start}
+.about-p{color:rgba(255,255,255,0.48);font-size:14px;line-height:1.9;margin-bottom:18px;font-weight:300}
+.about-p strong{color:rgba(255,255,255,0.85);font-weight:600}
+.cinfo{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.ci{display:flex;align-items:center;gap:11px;color:rgba(255,255,255,0.42);font-size:13px;font-weight:300}
+.edu-box{border-radius:16px;padding:20px 22px;margin-bottom:11px}
+.edu-lbl{font-size:9px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:8px}
+.edu-box h4{font-family:'Marcellus',serif;font-size:15px;color:rgba(255,255,255,0.82);margin-bottom:4px}
+.edu-box p{font-size:12px;color:rgba(255,255,255,0.3);font-weight:300}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.pill{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:50px;padding:6px 16px;font-size:12px;color:rgba(255,255,255,0.55);font-weight:400}
+.about-img{width:100%;border-radius:20px;object-fit:cover;height:220px;display:block;margin-bottom:11px;filter:brightness(0.85) saturate(0.9)}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sk-group{border-radius:18px;padding:24px}
+.sk-group h3{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:16px}
+.sk-tags{display:flex;flex-wrap:wrap;gap:8px}
+.sk-tag{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:50px;padding:6px 15px;font-size:12px;font-weight:400;color:rgba(255,255,255,0.58);transition:all 0.25s;cursor:default}
+.sk-tag:hover{background:rgba(255,255,255,0.09);color:#fff;border-color:rgba(255,255,255,0.18)}
+
+/* EXPERIENCE */
+.exp-item{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.exp-item:first-child{border-top:1px solid rgba(255,255,255,0.05)}
+.exp-date{font-size:11px;color:rgba(255,255,255,0.25);padding-top:4px;line-height:1.6;font-weight:400}
+.exp-role{font-family:'Marcellus',serif;font-size:17px;color:rgba(255,255,255,0.88);margin-bottom:3px}
+.exp-co{font-size:12px;color:rgba(255,255,255,0.38);font-weight:500;margin-bottom:10px;letter-spacing:0.02em}
+.exp-desc{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.75;font-weight:300}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.proj-card{border-radius:20px;overflow:hidden;transition:transform 0.35s,box-shadow 0.35s;cursor:pointer;border:1px solid rgba(255,255,255,0.07)}
+.proj-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,0.5);border-color:rgba(255,255,255,0.14)}
+.proj-thumb{height:185px;overflow:hidden;position:relative}
+.proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;filter:brightness(0.75) saturate(0.85)}
+.proj-card:hover .proj-thumb img{transform:scale(1.07)}
+.proj-thumb-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6),transparent)}
+.proj-body{padding:20px;background:rgba(255,255,255,0.02)}
+.proj-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.proj-tag{font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:50px;padding:3px 10px}
+.proj-title{font-family:'Marcellus',serif;font-size:20px;color:rgba(255,255,255,0.9);margin-bottom:7px}
+.proj-desc{font-size:12px;color:rgba(255,255,255,0.33);line-height:1.65;font-weight:300}
+
+/* SHOPIFY */
+.shop-intro{color:rgba(255,255,255,0.4);font-size:14px;line-height:1.85;max-width:560px;margin-bottom:38px;font-weight:300}
+.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.shop-card{border-radius:16px;padding:22px;transition:border-color 0.3s,background 0.3s}
+.shop-card:hover{border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.04)}
+.shop-name{font-family:'Marcellus',serif;font-size:17px;color:rgba(255,255,255,0.85);margin-bottom:14px}
+.shop-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.shop-list li{font-size:11.5px;color:rgba(255,255,255,0.33);line-height:1.55;display:flex;gap:8px;font-weight:300}
+.shop-list li::before{content:"→";color:rgba(255,255,255,0.18);flex-shrink:0}
+.shop-banner{width:100%;height:140px;object-fit:cover;border-radius:12px;margin-bottom:22px;filter:brightness(0.6) saturate(0.7)}
+
+/* INTERNSHIPS */
+.intern-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:11px}
+.intern-card{border-radius:15px;padding:22px 16px;text-align:center;transition:border-color 0.3s,background 0.3s}
+.intern-card:hover{border-color:rgba(255,255,255,0.16);background:rgba(255,255,255,0.04)}
+.intern-n{font-family:'Marcellus',serif;font-size:28px;color:rgba(255,255,255,0.1);margin-bottom:10px;line-height:1}
+.intern-name{font-size:12px;font-weight:500;color:rgba(255,255,255,0.65);margin-bottom:4px}
+.intern-dur{font-size:10px;color:rgba(255,255,255,0.25);font-weight:300}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.contact-sub{color:rgba(255,255,255,0.38);font-size:14px;line-height:1.85;margin-bottom:28px;font-weight:300}
+.cc{border-radius:14px;padding:17px 22px;display:flex;align-items:center;gap:15px;margin-bottom:10px;transition:border-color 0.3s,background 0.3s}
+.cc:hover{border-color:rgba(255,255,255,0.16);background:rgba(255,255,255,0.04)}
+.cc-icon{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cc-label{font-size:9px;color:rgba(255,255,255,0.25);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px}
+.cc-val{font-size:13px;color:rgba(255,255,255,0.7);font-weight:400}
+.cf{display:flex;flex-direction:column;gap:12px}
+.cf input,.cf textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px 18px;color:#fff;font-family:'Poppins',sans-serif;font-size:13px;font-weight:300;outline:none;transition:border-color 0.3s;resize:none;width:100%}
+.cf input::placeholder,.cf textarea::placeholder{color:rgba(255,255,255,0.2)}
+.cf input:focus,.cf textarea:focus{border-color:rgba(255,255,255,0.22)}
+.cf-btn{background:#fff;color:#000;border:none;border-radius:50px;padding:15px;font-size:14px;font-weight:600;width:100%;cursor:pointer;font-family:'Poppins',sans-serif;transition:all 0.3s;letter-spacing:0.01em}
+.cf-btn:hover{opacity:0.85;box-shadow:0 10px 36px rgba(255,255,255,0.18)}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:30px 24px}
+.footer-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.footer-logo{font-family:'Marcellus',serif;font-size:16px;color:rgba(255,255,255,0.3)}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.16);font-weight:300}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:12px;font-weight:400;color:rgba(255,255,255,0.25);transition:color 0.3s}
+.footer-links a:hover{color:#fff}
+
+/* TOAST */
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(18px);background:rgba(255,255,255,0.95);color:#000;border-radius:50px;padding:12px 26px;font-size:13px;font-weight:600;opacity:0;transition:all 0.35s;z-index:999;pointer-events:none;white-space:nowrap;font-family:'Poppins',sans-serif}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* DIVIDER BAND */
+.band{background:rgba(255,255,255,0.015);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);padding:22px 24px;overflow:hidden}
+.band-inner{display:flex;gap:48px;white-space:nowrap;animation:marquee 18s linear infinite;width:max-content}
+.band-inner span{font-family:'Marcellus',serif;font-size:13px;color:rgba(255,255,255,0.18);letter-spacing:0.08em}
+.band-inner span.dot{color:rgba(255,255,255,0.08)}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links,.nav-hire{display:none}
+  .hamburger{display:flex}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .shop-grid{grid-template-columns:1fr 1fr}
+  .intern-grid{grid-template-columns:repeat(3,1fr)}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2)::after{display:none}
+  .sec{padding:72px 20px}
+  .exp-item{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .skills-grid,.shop-grid{grid-template-columns:1fr}
+  .intern-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">Roshan Narendra</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="mailto:roshandra06@gmail.com" class="nav-hire">Hire Me</a>
+    <button class="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div id="mobile-nav">
+  <button class="mnav-close" onclick="toggleNav()">&#215;</button>
+  <a href="#about" onclick="toggleNav()">About</a>
+  <a href="#skills" onclick="toggleNav()">Skills</a>
+  <a href="#experience" onclick="toggleNav()">Experience</a>
+  <a href="#work" onclick="toggleNav()">Work</a>
+  <a href="#contact" onclick="toggleNav()">Contact</a>
+  <a href="mailto:roshandra06@gmail.com" onclick="toggleNav()" style="font-size:15px;background:#fff;color:#000;border-radius:50px;padding:13px 38px;font-family:'Poppins',sans-serif;font-weight:700">Hire Me</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="video-wrap">
+    <video id="bgv" autoplay muted loop playsinline></video>
+    <div class="video-overlay"></div>
+  </div>
+  <div class="hero-body">
+    <div class="avail-badge"><span class="badge-dot"></span>Available for Projects</div>
+    <h1 class="hero-h1">Crafting visuals<br/>that <em>convert</em></h1>
+    <p class="hero-sub">3D Artist &amp; Motion Designer with 4+ years of experience crafting product visualizations, animations, and brand identities for agencies and global companies.</p>
+    <div class="cta-row">
+      <a href="#work" class="btn-w">View My Work</a>
+      <a href="#contact" class="btn-o">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Get In Touch
+      </a>
+    </div>
+  </div>
+  <div class="stats-row">
+    <div class="stats-bar glass">
+      <div class="stat"><div class="stat-n">4+</div><div class="stat-l">Years Exp</div></div>
+      <div class="stat"><div class="stat-n">13+</div><div class="stat-l">Tools</div></div>
+      <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Brands</div></div>
+      <div class="stat"><div class="stat-n">5</div><div class="stat-l">Internships</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- MARQUEE BAND -->
+<div class="band">
+  <div class="band-inner">
+    <span>3D Animation</span><span class="dot">✦</span>
+    <span>Motion Design</span><span class="dot">✦</span>
+    <span>Brand Identity</span><span class="dot">✦</span>
+    <span>Product Visualization</span><span class="dot">✦</span>
+    <span>Shopify Development</span><span class="dot">✦</span>
+    <span>Meta Ads</span><span class="dot">✦</span>
+    <span>Architectural Viz</span><span class="dot">✦</span>
+    <span>After Effects</span><span class="dot">✦</span>
+    <span>Blender &amp; Maya</span><span class="dot">✦</span>
+    <span>3D Animation</span><span class="dot">✦</span>
+    <span>Motion Design</span><span class="dot">✦</span>
+    <span>Brand Identity</span><span class="dot">✦</span>
+    <span>Product Visualization</span><span class="dot">✦</span>
+    <span>Shopify Development</span><span class="dot">✦</span>
+    <span>Meta Ads</span><span class="dot">✦</span>
+    <span>Architectural Viz</span><span class="dot">✦</span>
+    <span>After Effects</span><span class="dot">✦</span>
+    <span>Blender &amp; Maya</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec">
+    <p class="sec-label">About Me</p>
+    <h2 class="sec-h2">The bridge between<br/><em>creative and commercial</em></h2>
+    <div class="about-grid">
+      <div>
+        <p class="about-p">Hey, I'm Roshan — a <strong>3D Artist, Motion Designer, and Brand Manager</strong> based in Gurgaon. Over the past 4+ years I've worked with fintech platforms, security enterprises, e-commerce brands, and fashion labels — helping them tell their story through cinematic 3D and motion.</p>
+        <p class="about-p">Beyond 3D, I run complete <strong>Shopify storefronts</strong> — from theme customization and product setup to Meta Pixel, ads, and ROAS optimization. I'm the bridge between creative and commercial.</p>
+        <div class="cinfo">
+          <div class="ci">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Sector 57, Gurgaon
+          </div>
+          <div class="ci">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            roshandra06@gmail.com
+          </div>
+          <div class="ci">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.59 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.37a16 16 0 0 0 5.73 5.73l1.64-1.68a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 77390 12855
+          </div>
+        </div>
+      </div>
+      <div>
+        <img class="about-img" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="3D Design workspace"/>
+        <div class="edu-box glass">
+          <p class="edu-lbl">Education</p>
+          <h4>B.Sc Animation</h4>
+          <p>Teerthankar Mahaveer University · 2020–2023</p>
+        </div>
+        <div class="glass" style="border-radius:16px;padding:18px 22px">
+          <p class="edu-lbl">Specialisms</p>
+          <div class="pill-row">
+            <span class="pill">Blender &amp; Maya</span>
+            <span class="pill">Shopify Expert</span>
+            <span class="pill">Meta Ads Pro</span>
+            <span class="pill">Brand Identity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec">
+    <p class="sec-label">Expertise</p>
+    <h2 class="sec-h2">Every tool in the <em>arsenal</em></h2>
+    <div class="skills-grid">
+      <div class="sk-group glass">
+        <h3>3D &amp; Rendering</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">Autodesk Maya</span>
+          <span class="sk-tag">Blender</span>
+          <span class="sk-tag">ZBrush</span>
+          <span class="sk-tag">Keyshot</span>
+          <span class="sk-tag">3DS Max</span>
+        </div>
+      </div>
+      <div class="sk-group glass">
+        <h3>Adobe Creative</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">After Effects</span>
+          <span class="sk-tag">Premiere Pro</span>
+          <span class="sk-tag">Photoshop</span>
+          <span class="sk-tag">Illustrator</span>
+        </div>
+      </div>
+      <div class="sk-group glass">
+        <h3>eCommerce &amp; Marketing</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">Shopify</span>
+          <span class="sk-tag">Meta Ads</span>
+          <span class="sk-tag">Google Analytics</span>
+          <span class="sk-tag">Figma</span>
+        </div>
+      </div>
+    </div>
+    <!-- Skills visual banner -->
+    <img src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?w=980&q=80" alt="Creative tools and workspace" style="width:100%;height:180px;object-fit:cover;border-radius:18px;margin-top:28px;filter:brightness(0.45) saturate(0.7);object-position:center 40%"/>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec">
+    <p class="sec-label">Experience</p>
+    <h2 class="sec-h2">4+ years of <em>impact</em></h2>
+    <div>
+      <div class="exp-item">
+        <div class="exp-date">Sept 2024 – Present</div>
+        <div>
+          <div class="exp-role">3D Motion Designer &amp; Graphics</div>
+          <div class="exp-co">NeoFinity — Fintech &amp; Payment Solutions</div>
+          <div class="exp-desc">Created 3D product animations and motion graphics for fintech and digital payment platforms. Designed marketing visuals for websites, ads, and social media, delivering production-ready assets with consistent visual quality.</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">May – Sept 2024</div>
+        <div>
+          <div class="exp-role">3D Motion Designer</div>
+          <div class="exp-co">Secure Connection (Honeywell)</div>
+          <div class="exp-desc">Developed 3D motion graphics and explainer animations for enterprise security solutions. Translated complex technical concepts into clear visual storytelling while maintaining strict brand standards.</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">July 2023 – May 2024</div>
+        <div>
+          <div class="exp-role">3D Motion Designer &amp; Graphics</div>
+          <div class="exp-co">Moehair Inc.</div>
+          <div class="exp-desc">Produced high-quality 3D product renders and animations for e-commerce marketing and product launches. Created optimized visuals for web and social media platforms.</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">March – July 2023</div>
+        <div>
+          <div class="exp-role">3D Motion Designer</div>
+          <div class="exp-co">Studion Arunisha</div>
+          <div class="exp-desc">Designed 3D motion graphics and product visualizations for branding and promotional projects. Managed multiple concurrent projects while meeting tight deadlines.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- WORK -->
+<section id="work">
+  <div class="sec">
+    <p class="sec-label">Selected Work</p>
+    <h2 class="sec-h2">Real brands. <em>Real results.</em></h2>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Bajaj Electricals 3D"/>
+          <div class="proj-thumb-overlay"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="proj-tag">3D Animation</span><span class="proj-tag">Product Viz</span><span class="proj-tag">Motion</span></div>
+          <div class="proj-title">Bajaj Electricals</div>
+          <div class="proj-desc">Product visualization and 3D animation campaign for one of India's largest electricals brands, via Nova Films.</div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="RM Homes Architectural"/>
+          <div class="proj-thumb-overlay"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="proj-tag">Architectural Viz</span><span class="proj-tag">3D Rendering</span></div>
+          <div class="proj-title">RM Homes</div>
+          <div class="proj-desc">Architectural 3D visualization and rendering for residential property marketing, via Tecvision.</div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" alt="Beyond Realty Branding"/>
+          <div class="proj-thumb-overlay"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="proj-tag">Branding</span><span class="proj-tag">Motion Design</span></div>
+          <div class="proj-title">Beyond Realty</div>
+          <div class="proj-desc">Brand identity and motion design for a premium real estate firm, including promotional visuals and social assets.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- SHOPIFY -->
+<section id="ecommerce">
+  <div class="sec">
+    <p class="sec-label">eCommerce</p>
+    <h2 class="sec-h2">Shopify stores built <em>to sell</em></h2>
+    <img class="shop-banner" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=980&q=80" alt="eCommerce and Shopify"/>
+    <p class="shop-intro">End-to-end Shopify development — theme, catalogue, SEO, Meta Pixel, ad campaigns, and performance tracking. From zero to launch with Meta Ads driving ROAS from day one.</p>
+    <div class="shop-grid">
+      <div class="shop-card glass">
+        <div class="shop-name">Velvotic</div>
+        <ul class="shop-list">
+          <li>End-to-end Shopify setup &amp; launch</li>
+          <li>Theme customization &amp; management</li>
+          <li>Meta Pixel &amp; conversion tracking</li>
+          <li>Ad creatives &amp; ROAS optimization</li>
+        </ul>
+      </div>
+      <div class="shop-card glass">
+        <div class="shop-name">Elyora</div>
+        <ul class="shop-list">
+          <li>Modern clothing brand launch</li>
+          <li>Mobile optimization &amp; support</li>
+          <li>Tax, SEO &amp; app integration</li>
+          <li>ROAS-optimized Meta campaigns</li>
+        </ul>
+      </div>
+      <div class="shop-card glass">
+        <div class="shop-name">MantraModa</div>
+        <ul class="shop-list">
+          <li>T-shirt brand Shopify setup</li>
+          <li>Theme &amp; variant management</li>
+          <li>Shipping, apps &amp; SEO</li>
+          <li>Mobile optimization &amp; testing</li>
+        </ul>
+      </div>
+      <div class="shop-card glass">
+        <div class="shop-name">PradernVastra</div>
+        <ul class="shop-list">
+          <li>Product cataloging</li>
+          <li>Listings, variants &amp; pricing</li>
+          <li>Collections &amp; navigation</li>
+          <li>Theme setup &amp; launch readiness</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- INTERNSHIPS -->
+<section id="internships">
+  <div class="sec">
+    <p class="sec-label">Early Career</p>
+    <h2 class="sec-h2">Internships that <em>shaped my craft</em></h2>
+    <div class="intern-grid">
+      <div class="intern-card glass">
+        <div class="intern-n">01</div>
+        <div class="intern-name">PeakPals</div>
+        <div class="intern-dur">3 Months</div>
+      </div>
+      <div class="intern-card glass">
+        <div class="intern-n">02</div>
+        <div class="intern-name">Satra Productions</div>
+        <div class="intern-dur">3 Months</div>
+      </div>
+      <div class="intern-card glass">
+        <div class="intern-n">03</div>
+        <div class="intern-name">Cheeku Technologies</div>
+        <div class="intern-dur">6 Months</div>
+      </div>
+      <div class="intern-card glass">
+        <div class="intern-n">04</div>
+        <div class="intern-name">Novela Films</div>
+        <div class="intern-dur">2 Months</div>
+      </div>
+      <div class="intern-card glass">
+        <div class="intern-n">05</div>
+        <div class="intern-name">HMLC</div>
+        <div class="intern-dur">2 Months</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec">
+    <p class="sec-label">Contact</p>
+    <h2 class="sec-h2">Let's build something <em>great</em></h2>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-sub">Have a project in mind? Whether it's a 3D campaign, brand identity, or a Shopify store — I'm ready to bring it to life. Let's talk.</p>
+        <a href="mailto:roshandra06@gmail.com" class="cc glass">
+          <div class="cc-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div><div class="cc-label">Email</div><div class="cc-val">roshandra06@gmail.com</div></div>
+        </a>
+        <a href="tel:+917739012855" class="cc glass">
+          <div class="cc-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.59 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.37a16 16 0 0 0 5.73 5.73l1.64-1.68a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div><div class="cc-label">Phone</div><div class="cc-val">+91 77390 12855</div></div>
+        </a>
+        <div class="cc glass">
+          <div class="cc-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div><div class="cc-label">Location</div><div class="cc-val">Sector 57, Gurgaon</div></div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80" alt="Creative workspace" style="width:100%;height:150px;object-fit:cover;border-radius:16px;margin-top:16px;filter:brightness(0.5) saturate(0.7)"/>
+      </div>
+      <div class="cf">
+        <input type="text" id="fn" placeholder="Your Name"/>
+        <input type="email" id="fe" placeholder="Your Email"/>
+        <textarea id="fm" rows="5" placeholder="Tell me about your project..."></textarea>
+        <button class="cf-btn" onclick="sendMsg()">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Roshan Narendra</div>
+    <span class="footer-copy">2025 · 3D Designer &amp; Brand Manager · Gurgaon, India</span>
+    <div class="footer-links">
+      <a href="mailto:roshandra06@gmail.com">Email</a>
+      <a href="tel:+917739012855">Phone</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Behance</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function toggleNav() {
+  var mn = document.getElementById('mobile-nav');
+  var open = mn.style.display === 'flex';
+  mn.style.display = open ? 'none' : 'flex';
+  document.body.style.overflow = open ? '' : 'hidden';
+}
+
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('nav');
+  nav.style.padding = window.scrollY > 50 ? '10px 20px' : '16px 20px';
+}, { passive: true });
+
+(function() {
+  var v = document.getElementById('bgv');
+  var src = 'https://stream.mux.com/kimF2ha9zLrX64H00UgLGPflCzNtl1T0215MlAmeOztv8.m3u8';
+  if (v.canPlayType('application/vnd.apple.mpegurl')) {
+    v.src = src;
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.4.12/hls.min.js';
+    s.onload = function() {
+      if (window.Hls && window.Hls.isSupported()) {
+        var hls = new window.Hls();
+        hls.loadSource(src);
+        hls.attachMedia(v);
+      }
+    };
+    document.head.appendChild(s);
+  }
+})();
+
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('on');
+  setTimeout(function() { t.classList.remove('on'); }, 3000);
+}
+
+function sendMsg() {
+  var n = document.getElementById('fn').value.trim();
+  var e = document.getElementById('fe').value.trim();
+  var m = document.getElementById('fm').value.trim();
+  if (!n || !e || !m) { showToast('Please fill in all fields'); return; }
+  var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!re.test(e)) { showToast('Enter a valid email address'); return; }
+  window.location.href = 'mailto:roshandra06@gmail.com?subject=Enquiry from ' + encodeURIComponent(n) + '&body=' + encodeURIComponent('Name: ' + n + '\nEmail: ' + e + '\n\n' + m);
+  showToast('Opening your email client...');
+}
+
+window.addEventListener('scroll', function() {
+  var v = document.getElementById('bgv');
+  if (v && window.scrollY < window.innerHeight) {
+    v.style.transform = 'translateY(' + (window.scrollY * 0.18) + 'px)';
+  }
+}, { passive: true });
+</script>
+</body>
+</html>
