@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="ONE47 — brand, design and motion studio. Launching soon. Leave your email to be first through the door." />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<title>Coming Soon — ONE47</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+:root {
+  --pill-dark: #252943; --lime: #e3ff3b; --light: #dee0ed; --muted: #9a9fbd;
+  --trust-border: rgba(255,255,255,0.4); --nav-shadow: 0 4px 14px rgba(0,0,0,0.16);
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-display: "BubbledotICG-FinePos", "Geist Pixel Circle", monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: #000; color: #fff; font-family: var(--font-sans); height: 100vh; height: 100dvh; overflow: hidden; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+
+.bg { position: fixed; inset: 0; background: #000; overflow: hidden; }
+.bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,15,28,.55) 0%, rgba(13,15,28,.35) 45%, rgba(13,15,28,.7) 100%); pointer-events: none; }
+
+.cs {
+  position: relative; z-index: 1;
+  height: 100vh; height: 100dvh;
+  display: flex; flex-direction: column; align-items: center;
+  padding: clamp(14px, 2.4vh, 28px) clamp(14px, 3vw, 32px);
+  overflow: hidden;
+}
+.cs-logo { flex-shrink: 0; display: block; animation: slideDown .7s var(--ease) both; transition: transform .3s var(--ease); }
+.cs-logo:hover { transform: scale(1.04); }
+.cs-logo img { display: block; height: clamp(34px, 5.4vh, 52px); width: auto; filter: drop-shadow(0 2px 10px rgba(0,0,0,.45)); }
+
+.cs-center { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%; max-width: 760px; }
+
+.a { opacity: 0; transform: translateY(22px) scale(.98); filter: blur(6px); animation: reveal .85s var(--ease) forwards; animation-delay: var(--d, 0s); }
+
+.cs-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 16px; margin-bottom: clamp(10px, 2.4vh, 26px);
+  background: var(--pill-dark); border: 1px solid var(--trust-border); border-radius: 999px;
+  color: var(--light); font-weight: 500; font-size: 12.5px;
+}
+.cs-badge i { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 10px var(--lime); animation: blink 1.6s ease-in-out infinite; }
+
+.cs-title { margin: 0; font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: min(12vw, 15vh); line-height: 1.02; letter-spacing: -.04em; text-shadow: 0 2px 24px rgba(13,15,28,.6); }
+.cs-title .line { display: block; opacity: 0; transform: translateY(14px); animation: headlineFade .85s var(--ease) forwards; }
+.cs-title .l1 { animation-delay: .12s; }
+.cs-title .l2 { animation-delay: .3s; color: var(--lime); }
+
+.cs-sub { margin: clamp(10px, 2vh, 22px) 0 clamp(14px, 3vh, 32px); max-width: min(500px, 92%); font-size: clamp(14px, 1.6vw, 17px); line-height: 1.55; color: #d0d0d0; --o: .85; }
+
+.countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(8px, 1.4vw, 14px); width: min(520px, 100%); margin-bottom: clamp(14px, 3vh, 30px); }
+.countdown div { padding: clamp(8px, 1.8vh, 18px) 6px; background: rgba(37,41,67,.72); border: 1px solid var(--trust-border); border-radius: 20px; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.countdown strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: clamp(24px, min(5vw, 6vh), 44px); line-height: 1; letter-spacing: -.03em; color: var(--lime); font-variant-numeric: tabular-nums; }
+.countdown span { display: block; margin-top: 6px; font-size: clamp(10px, 1.3vw, 12px); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 500; }
+
+.notify { display: flex; width: min(460px, 100%); padding: 5px; background: rgba(0,0,0,.55); border: 1px solid var(--trust-border); border-radius: 999px; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.notify input { flex: 1; min-width: 0; padding: 11px 18px; background: transparent; border: 0; outline: 0; font-family: var(--font-sans); font-size: 14px; color: #fff; }
+.notify input::placeholder { color: var(--muted); }
+.notify button { padding: 11px 24px; background: var(--lime); color: var(--pill-dark); border: 0; border-radius: 999px; font-family: var(--font-sans); font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 0 22px rgba(227,255,59,.32); transition: transform .3s var(--ease), box-shadow .3s; }
+.notify button:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 0 30px rgba(227,255,59,.55), 0 0 60px rgba(227,255,59,.2); }
+.notify-msg { min-height: 18px; margin: 10px 0 0; font-size: 13px; color: var(--lime); }
+.notify-msg.err { color: #ff9a9a; }
+
+.cs-foot { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 12.5px; color: var(--muted); }
+.cs-social { display: flex; gap: 8px; }
+.cs-social a { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; background: var(--pill-dark); color: var(--light); font-size: 14px; box-shadow: var(--nav-shadow); transition: background .2s, color .2s, transform .15s; }
+.cs-social a:hover { background: #33396a; color: var(--lime); transform: translateY(-2px); }
+
+@keyframes slideDown { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: none; } }
+@keyframes reveal { from { opacity: 0; transform: translateY(22px) scale(.98); filter: blur(6px); } to { opacity: var(--o, 1); transform: none; filter: blur(0); } }
+@keyframes headlineFade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes blink { 50% { opacity: .35; } }
+
+/* phones: allow scrolling only if a very short screen needs it */
+@media (max-width: 720px) {
+  body { overflow-y: auto; height: auto; min-height: 100dvh; }
+  .cs { height: auto; min-height: 100dvh; overflow: visible; }
+  .cs-title { font-size: min(15vw, 13vh); letter-spacing: -.06em; }
+  .notify button { padding: 11px 18px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .a, .cs-title .line { opacity: 1; transform: none; filter: none; } .cs-sub { opacity: .85; } }
+.pp-link { color: var(--light); text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
+.pp-link:hover { color: var(--lime); }
+</style>
+</head>
+<body>
+<div class="bg">
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4" type="video/mp4" />
+  </video>
+</div>
+
+<main class="cs">
+  <a class="cs-logo" href="#" aria-label="ONE47"><img src="assets/logo-one47.png" alt="ONE47 — Everything Aligned" width="190" height="53" /></a>
+
+  <div class="cs-center">
+    <span class="cs-badge a" style="--d:.05s"><i></i> A new universe of design is being forged</span>
+    <h1 class="cs-title">
+      <span class="line l1">Coming</span>
+      <span class="line l2">Soon</span>
+    </h1>
+    <p class="cs-sub a" style="--d:.3s">Brand, design and motion are about to cross a line they have never crossed. Leave your email and be first through the door.</p>
+
+    <div class="countdown a" style="--d:.4s" aria-label="Time until launch">
+      <div><strong id="cd-d">00</strong><span>Days</span></div>
+      <div><strong id="cd-h">00</strong><span>Hours</span></div>
+      <div><strong id="cd-m">00</strong><span>Minutes</span></div>
+      <div><strong id="cd-s">00</strong><span>Seconds</span></div>
+    </div>
+
+    <form class="notify a" style="--d:.5s" id="notify" novalidate>
+      <input type="email" id="email" placeholder="Enter your email address" aria-label="Email address" required />
+      <button type="submit">Notify Me</button>
+    </form>
+    <p class="notify-msg" id="msg" role="status" aria-live="polite"></p>
+  </div>
+
+  <footer class="cs-foot a" style="--d:.6s">
+    <div class="cs-social">
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+    </div>
+    <span>© 2026 ONE47. All rights reserved. · <a class="pp-link" href="privacy">Privacy Policy</a></span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  // Repeating 3-day countdown: a fixed epoch + 3-day cycles, so the timer restarts
+  // by itself every time it reaches zero (and stays in sync across visits/devices).
+  var CYCLE = 3 * 24 * 60 * 60 * 1000;
+  var EPOCH = Date.UTC(2026, 0, 1);
+  var els = { d: document.getElementById("cd-d"), h: document.getElementById("cd-h"), m: document.getElementById("cd-m"), s: document.getElementById("cd-s") };
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function tick() {
+    var left = CYCLE - ((Date.now() - EPOCH) % CYCLE);
+    els.d.textContent = pad(Math.floor(left / 864e5));
+    els.h.textContent = pad(Math.floor(left / 36e5) % 24);
+    els.m.textContent = pad(Math.floor(left / 6e4) % 60);
+    els.s.textContent = pad(Math.floor(left / 1e3) % 60);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  var form = document.getElementById("notify");
+  var msg = document.getElementById("msg");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var v = document.getElementById("email").value.trim();
+    var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    msg.className = "notify-msg" + (ok ? "" : " err");
+    msg.textContent = ok ? "You are on the list. We will email you at launch." : "Please enter a valid email address.";
+    if (ok) form.reset();
+  });
+})();
+</script>
+</body>
+</html>

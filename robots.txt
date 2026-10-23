@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /home.html
+Disallow: /coming-soon.html
+Disallow: /404.html
+
+Sitemap: https://roshannarendra.com/sitemap.xml
