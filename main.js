@@ -77,6 +77,8 @@ function fitWatermark() {
   try {
     var b = text.getBBox();
     svg.setAttribute("viewBox", b.x + " " + b.y + " " + b.width + " " + b.height);
+    // only 87% of the brand name shows: the page edge crops the bottom 13%
+    var box = svg.parentNode; if (box) box.style.marginBottom = (-0.13 * svg.getBoundingClientRect().height).toFixed(1) + "px";
   } catch (e) {}
 }
 if (document.fonts && document.fonts.ready) {
@@ -259,10 +261,13 @@ window.addEventListener("resize", fitWatermark);
   var bar = document.createElement("div");
   bar.className = "scroll-progress"; bar.setAttribute("aria-hidden", "true");
   document.body.appendChild(bar);
-  var lastY = window.scrollY, ticking = false;
+  var lastY = window.scrollY, ticking = false, docH = 0;
+  function measure() { docH = document.documentElement.scrollHeight - window.innerHeight; }
+  measure(); window.addEventListener("resize", measure); window.addEventListener("load", measure);
+  if ("ResizeObserver" in window) new ResizeObserver(measure).observe(document.body);
   function menuOpen() { return document.body.classList.contains("menu-open") || !!$(".nav-item.open"); }
   function update() {
-    var y = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+    var y = window.scrollY, h = docH;
     bar.style.transform = "scaleX(" + (h > 0 ? Math.min(y / h, 1) : 0) + ")";
     if (!reduced) {
       if (menuOpen() || y < 120) document.body.classList.remove("nav-hidden");
@@ -351,4 +356,88 @@ window.addEventListener("resize", fitWatermark);
   function tick() { var t = fmt(); els.forEach(function (e) { e.textContent = t; }); }
   tick();
   setInterval(tick, 1000);
+})();
+
+/* services hub: lazy looping film previews */
+(function () {
+  var vis = document.querySelectorAll(".svc-vis[data-vid]");
+  if (!vis.length) return;
+  var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  vis.forEach(function (a) {
+    var v = document.createElement("video");
+    v.muted = true; v.loop = true; v.playsInline = true; v.preload = "none";
+    v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("aria-hidden", "true");
+    v.poster = a.getAttribute("data-poster");
+    v.style.cssText = "position:absolute;inset:0;width:100%;height:100%;object-fit:cover";
+    a.insertBefore(v, a.firstChild);
+  });
+  if (calm || !("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      var v = e.target.querySelector("video"), a = e.target;
+      if (e.isIntersecting) { if (!v.src) v.src = a.getAttribute("data-vid"); var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      else v.pause();
+    });
+  }, { threshold: 0.3 });
+  vis.forEach(function (a) { io.observe(a); });
+})();
+
+// Profile cards: the bookmark button saves a card in this browser
+(function () {
+  var KEY = "one47_saved", saved = [];
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) {}
+  function nameOf(b) { var c = b.closest(".pf"), n = c && c.querySelector(".pf-name"); return n ? n.textContent.trim() : ""; }
+  function paint(b, on) { b.setAttribute("aria-pressed", String(on)); var i = b.querySelector("i"); if (i) i.className = on ? "fa-solid fa-bookmark" : "fa-regular fa-bookmark"; }
+  function sync(root) { Array.prototype.forEach.call((root || document).querySelectorAll(".pf-save"), function (b) { paint(b, saved.indexOf(nameOf(b)) > -1); }); }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest(".pf-save"); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var n = nameOf(b), on = b.getAttribute("aria-pressed") !== "true";
+    saved = saved.filter(function (x) { return x !== n; }); if (on) saved.push(n);
+    try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (err) {}
+    paint(b, on);
+  });
+  sync();
+  window.addEventListener("load", function () { sync(); });
+  window.pfSync = sync;
+})();
+
+// Videos: play only while visible, so scrolling never competes with several decoders
+(function () {
+  var vids = Array.prototype.slice.call(document.querySelectorAll("video[autoplay]"));
+  if (!vids.length) return;
+  var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  vids.forEach(function (v) { v.muted = true; v.setAttribute("playsinline", ""); });
+  if (calm || !("IntersectionObserver" in window)) { vids.forEach(function (v) { v.pause(); v.removeAttribute("autoplay"); }); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) { if (v.preload === "none") v.preload = "metadata"; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      else v.pause();
+    });
+  }, { threshold: 0.12, rootMargin: "80px 0px" });
+  vids.forEach(function (v) { v.pause(); io.observe(v); });
+})();
+
+// Service intro: the lead sentence lights up word by word as it scrolls into the reading zone
+(function () {
+  var lead = document.querySelector(".si-lead"); if (!lead) return;
+  var text = lead.textContent.trim(), words = text.split(/\s+/);
+  lead.setAttribute("aria-label", text);
+  lead.innerHTML = words.map(function (w) { return '<span class="w" aria-hidden="true">' + w + "</span>"; }).join(" ");
+  var spans = Array.prototype.slice.call(lead.querySelectorAll(".w"));
+  var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (calm || !("IntersectionObserver" in window)) { spans.forEach(function (s) { s.classList.add("on"); }); return; }
+  var live = false, tick = false;
+  function paint() {
+    tick = false;
+    var r = lead.getBoundingClientRect(), vh = window.innerHeight;
+    var p = Math.max(0, Math.min(1, (vh * 0.88 - r.top) / (r.height + vh * 0.36)));
+    var n = Math.round(p * spans.length);
+    for (var i = 0; i < spans.length; i++) spans[i].classList.toggle("on", i < n);
+  }
+  function ask() { if (live && !tick) { tick = true; requestAnimationFrame(paint); } }
+  new IntersectionObserver(function (es) { live = es[0].isIntersecting; if (live) ask(); }, { rootMargin: "0px 0px 0px 0px" }).observe(lead);
+  window.addEventListener("scroll", ask, { passive: true }); window.addEventListener("resize", ask);
+  paint();
 })();

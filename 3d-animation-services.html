@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add("js")</script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3D Animation & Product Visualization Services | ONE47</title>
   <meta name="description" content="Cinematic 3D animation, product visualization and photoreal renders for brands, agencies and e-commerce. Maya, Blender, ZBrush &amp; Keyshot. Based in Gurgaon, working worldwide." />
@@ -29,10 +30,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="styles.css?v=110" />
+  <link rel="stylesheet" href="pages.css?v=140" />
+  <link rel="stylesheet" href="cine.css?v=13" />
 </head>
-<body class="inner" data-nav="services">
+<body class="inner cine" data-nav="services">
   <div id="site-header"></div>
 
   <main>
@@ -44,19 +46,43 @@
       <p style="margin-top:22px"><a class="btn" href="contact?service=3d-animation">Get a free quote <i class="fa-solid fa-arrow-right"></i></a></p>
     </section>
 
-    <section class="section tightb">
-      <div class="wrap narrow">
-        <img class="hero-img" src="assets/img/creative-tools.jpg" alt="Glowing 3D rendered object on a purple gradient background, example of 3D product visualization" width="1200" height="800" fetchpriority="high" decoding="async" />
-        <p class="prose-p">Great products deserve more than a flat photo. Our 3D animation studio builds the product from scratch in 3D, lights it like a film set and animates it so customers understand what it does and why they want it. Because everything is digital, you can show a product before it is manufactured, show it from impossible angles and change colors, finishes or environments without a new shoot.</p>
-        <p class="prose-p">We have created 3D product animations and visuals for fintech and payment platforms, enterprise security solutions, e-commerce brands and electricals and fashion labels. Every project is delivered as production-ready assets optimized for web, ads and social, with consistent visual quality across every format.</p>
+    <section class="section tightb svc-intro">
+      <div class="wrap">
+        <div class="si-grid">
+          <figure class="si-pic reveal"><video class="si-media" src="assets/work/3d-motion/suono-p300-2-0.mp4" poster="assets/work/3d-motion/suono-p300-2-0-poster.webp" width="900" height="506" autoplay muted loop playsinline preload="none" aria-label="3D product animation frame showing blue and grey cylindrical speakers"></video></figure>
+          <div class="si-copy reveal">
+            <p class="si-lead">Great products deserve more than a flat photo. We build your product in 3D, light it like a film set and animate it so customers see what it does and why they want it.</p>
+            <ul class="si-pts"><li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><b>Show it before it's made</b><span>Present a product before it is manufactured.</span></div></li><li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><b>Impossible angles</b><span>Camera moves a photo shoot can't deliver.</span></div></li><li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><b>Change it, don't reshoot</b><span>Swap colours, finishes and environments digitally.</span></div></li></ul>
+            <p class="si-note">Delivered as production-ready assets for web, ads and social, for fintech, security, e-commerce, electricals and fashion brands.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section tightb">
+    <section class="section tightb inc">
       <div class="wrap">
         <h2 class="section-title reveal">What's <span>included</span></h2>
         <ul class="checks wide reveal"><li>3D product modeling & texturing</li><li>Photoreal product renders</li><li>Product animation & explainer shots</li><li>Lighting & studio-style environments</li><li>Launch-campaign visuals for ads & social</li><li>Optimized exports for web, video & social</li></ul>
         <p class="prose-p centered reveal">This service is for product brands, e-commerce stores, fintech and technology companies, manufacturers and agencies that need premium visuals without the cost and limits of physical shoots.</p>
+      </div>
+    </section>
+
+    <section class="section tightb svc-work" id="svcWork" data-svc="3d-animation">
+      <div class="wrap">
+        <h2 class="section-title reveal">Selected <span>work</span></h2>
+        <p class="work-lead reveal">A look at what we've made. <b id="svcCount">…</b> pieces in this section, from films and reels to stills. Tap anything to open it full size.</p>
+        <div id="svcFeatured" class="work-featured"></div>
+        <div id="svcReelsBlock">
+          <h3 class="work-sub">Films &amp; reels</h3>
+          <div class="reel-row" id="svcReels"></div>
+          <p class="g-more"><button type="button" class="btn ghost" id="svcReelsMore" style="display:none">Show more films</button></p>
+        </div>
+        <div id="svcStillsBlock">
+          <h3 class="work-sub">Stills &amp; renders</h3>
+          <div class="wall" id="svcWall"></div>
+          <p class="g-more"><button type="button" class="btn ghost" id="svcStillsMore" style="display:none">Show more stills</button></p>
+        </div>
+        <p class="g-more"><a class="btn" href="gallery#3d-animation">Open the full gallery <i class="fa-solid fa-arrow-right"></i></a></p>
       </div>
     </section>
 
@@ -86,25 +112,23 @@
     <section class="section tightb">
       <div class="wrap">
         <h2 class="section-title reveal">Related <span>services</span></h2>
-        <div class="grid c3"><a class="card reveal" href="motion-design-services"><h3>Motion Design</h3><p>We turn complex ideas into clear, memorable motion — explainer animations, 3D motion graphics and social video that keep people watching.</p><span class="more">Learn more <i class="fa-solid fa-arrow-right"></i></span></a><a class="card reveal" href="architectural-visualization"><h3>Architectural Visualization</h3><p>We create photoreal architectural visualizations that let buyers see a property before it is built — helping real estate teams market and sell with confidence.</p><span class="more">Learn more <i class="fa-solid fa-arrow-right"></i></span></a><a class="card reveal" href="brand-identity-design"><h3>Brand Identity</h3><p>We build brand identities that look sharp, feel consistent and make your business easy to recognise and remember — on screen, in print and on social.</p><span class="more">Learn more <i class="fa-solid fa-arrow-right"></i></span></a></div>
+        <div class="grid c3"><article class="pf reveal"><div class="pf-pic"><img src="assets/work/3d-motion/hammer-lifestyle-poster.webp" alt="Motion frame of a wireless earbud" width="600" height="400" loading="lazy" decoding="async"></div><h3 class="pf-name">Motion Design</h3><p class="pf-desc">We turn complex ideas into clear, memorable motion — explainer animations, 3D motion graphics and social video that keep people watching.</p><dl class="pf-stats"><div><dt>Tool</dt><dd>After Effects</dd></div><div><dt>Tool</dt><dd>Premiere</dd></div><div><dt>Tool</dt><dd>Blender</dd></div></dl><div class="pf-act"><a class="pf-btn" href="motion-design-services"><i class="fa-regular fa-eye"></i> Learn more</a><a class="pf-sq" href="contact?service=motion" aria-label="Get in touch about Motion Design"><i class="fa-regular fa-envelope"></i></a></div></article><article class="pf reveal"><div class="pf-pic"><img src="assets/work/stalls/aurolab-view03.webp" alt="Exhibition stall render" width="600" height="400" loading="lazy" decoding="async"></div><h3 class="pf-name">Architectural Visualization</h3><p class="pf-desc">We create photoreal architectural visualizations that let buyers see a property before it is built — helping real estate teams market and sell with confidence.</p><dl class="pf-stats"><div><dt>Tool</dt><dd>3DS Max</dd></div><div><dt>Tool</dt><dd>Maya</dd></div><div><dt>Tool</dt><dd>Keyshot</dd></div></dl><div class="pf-act"><a class="pf-btn" href="architectural-visualization"><i class="fa-regular fa-eye"></i> Learn more</a><a class="pf-sq" href="contact?service=architectural" aria-label="Get in touch about Architectural Visualization"><i class="fa-regular fa-envelope"></i></a></div></article><article class="pf reveal"><div class="pf-pic"><img src="assets/work/2d-motion/moehair-2nd-poster.webp" alt="Brand film frame for a hair-care label" width="600" height="400" loading="lazy" decoding="async"></div><h3 class="pf-name">Brand Identity</h3><p class="pf-desc">We build brand identities that look sharp, feel consistent and make your business easy to recognise and remember — on screen, in print and on social.</p><dl class="pf-stats"><div><dt>Tool</dt><dd>Illustrator</dd></div><div><dt>Tool</dt><dd>Photoshop</dd></div><div><dt>Tool</dt><dd>Figma</dd></div></dl><div class="pf-act"><a class="pf-btn" href="brand-identity-design"><i class="fa-regular fa-eye"></i> Learn more</a><a class="pf-sq" href="contact?service=brand" aria-label="Get in touch about Brand Identity"><i class="fa-regular fa-envelope"></i></a></div></article></div>
       </div>
     </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="cta-band reveal">
-        <h2>Let's build something <span>great</span></h2>
-        <p>Have a project in mind? Whether it's a 3D campaign, brand identity or a Shopify store, our team is ready to bring it to life.</p>
-        <a class="btn" href="contact">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
   </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Work viewer">
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lb-btn lb-nav lb-prev" id="lbPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="lb-stage" id="lbMedia"></div>
+    <button class="lb-btn lb-nav lb-next" id="lbNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lb-cap"><b id="lbTitle"></b><small id="lbCat"></small></div>
+  </dialog>
 
   <div id="site-footer"></div>
 
-  <script src="layout.js"></script>
-  <script src="main.js"></script>
-  <script src="pages.js" data-page="service"></script>
+  <script src="layout.js?v=110"></script>
+  <script src="main.js?v=140"></script>
+  <script src="pages.js?v=100" data-page="service"></script>
 </body>
 </html>

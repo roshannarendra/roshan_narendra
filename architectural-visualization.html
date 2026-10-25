@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add("js")</script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Architectural Visualization & 3D Rendering Services | ONE47</title>
   <meta name="description" content="Architectural 3D visualization and photoreal rendering for real estate and residential property marketing. Sell projects before they are built. Gurgaon, Delhi NCR &amp; worldwide." />
@@ -29,10 +30,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="styles.css?v=110" />
+  <link rel="stylesheet" href="pages.css?v=140" />
+  <link rel="stylesheet" href="cine.css?v=13" />
 </head>
-<body class="inner" data-nav="services">
+<body class="inner cine" data-nav="services">
   <div id="site-header"></div>
 
   <main>
@@ -44,19 +46,43 @@
       <p style="margin-top:22px"><a class="btn" href="contact?service=architectural">Get a free quote <i class="fa-solid fa-arrow-right"></i></a></p>
     </section>
 
-    <section class="section tightb">
-      <div class="wrap narrow">
-        <img class="hero-img" src="assets/img/realty.jpg" alt="Modern residential apartment building against a blue sky, example of architectural visualization subject" width="1200" height="800" fetchpriority="high" decoding="async" />
-        <p class="prose-p">Buyers decide with their eyes. High-quality architectural 3D rendering turns plans and drawings into images that feel real, so your project sells earlier and your marketing looks as premium as the building.</p>
-        <p class="prose-p">We have produced architectural 3D visualization and rendering for residential property marketing, and we combine it with branding and motion design so a development's visuals, promo videos and social content all look like one campaign.</p>
+    <section class="section tightb svc-intro">
+      <div class="wrap">
+        <div class="si-grid">
+          <figure class="si-pic reveal"><img class="hero-img" src="assets/work/stalls/aurolab-view01.webp" alt="3D render of an exhibition stall design" width="1200" height="800" fetchpriority="high" decoding="async" /></figure>
+          <div class="si-copy reveal">
+            <p class="si-lead">Buyers decide with their eyes. Architectural 3D rendering turns plans and drawings into images that feel real, so your project sells earlier.</p>
+            <ul class="si-pts"><li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><b>From plans to photoreal</b><span>Drawings turned into images buyers believe.</span></div></li><li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><b>Built for marketing</b><span>Residential property visuals that sell.</span></div></li><li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><b>One consistent campaign</b><span>Renders, promo videos and social look unified.</span></div></li></ul>
+            <p class="si-note">Combined with branding and motion design for a development's whole campaign.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section tightb">
+    <section class="section tightb inc">
       <div class="wrap">
         <h2 class="section-title reveal">What's <span>included</span></h2>
         <ul class="checks wide reveal"><li>Exterior 3D renders</li><li>Interior visualization</li><li>Residential property marketing images</li><li>Walkthrough & fly-through animation</li><li>Day & dusk lighting scenes</li><li>Brochure, hoarding & social-ready exports</li></ul>
         <p class="prose-p centered reveal">For real estate developers, builders, architects, interior studios and property marketing agencies in Delhi NCR and beyond.</p>
+      </div>
+    </section>
+
+    <section class="section tightb svc-work" id="svcWork" data-svc="architectural">
+      <div class="wrap">
+        <h2 class="section-title reveal">Selected <span>work</span></h2>
+        <p class="work-lead reveal">A look at what we've made. <b id="svcCount">…</b> pieces in this section, from films and reels to stills. Tap anything to open it full size.</p>
+        <div id="svcFeatured" class="work-featured"></div>
+        <div id="svcReelsBlock">
+          <h3 class="work-sub">Films &amp; reels</h3>
+          <div class="reel-row" id="svcReels"></div>
+          <p class="g-more"><button type="button" class="btn ghost" id="svcReelsMore" style="display:none">Show more films</button></p>
+        </div>
+        <div id="svcStillsBlock">
+          <h3 class="work-sub">Stills &amp; renders</h3>
+          <div class="wall" id="svcWall"></div>
+          <p class="g-more"><button type="button" class="btn ghost" id="svcStillsMore" style="display:none">Show more stills</button></p>
+        </div>
+        <p class="g-more"><a class="btn" href="gallery#architectural">Open the full gallery <i class="fa-solid fa-arrow-right"></i></a></p>
       </div>
     </section>
 
@@ -86,25 +112,23 @@
     <section class="section tightb">
       <div class="wrap">
         <h2 class="section-title reveal">Related <span>services</span></h2>
-        <div class="grid c3"><a class="card reveal" href="3d-animation-services"><h3>3D Animation & Product Visualization</h3><p>We design cinematic 3D animations and photoreal product visualizations that make your product the hero — for launch campaigns, websites, ads and social media.</p><span class="more">Learn more <i class="fa-solid fa-arrow-right"></i></span></a><a class="card reveal" href="brand-identity-design"><h3>Brand Identity</h3><p>We build brand identities that look sharp, feel consistent and make your business easy to recognise and remember — on screen, in print and on social.</p><span class="more">Learn more <i class="fa-solid fa-arrow-right"></i></span></a><a class="card reveal" href="meta-ads-management"><h3>Meta Ads</h3><p>We combine scroll-stopping creatives with proper tracking and optimization so your Facebook and Instagram ads work harder for every rupee or dollar spent.</p><span class="more">Learn more <i class="fa-solid fa-arrow-right"></i></span></a></div>
+        <div class="grid c3"><article class="pf reveal"><div class="pf-pic"><img src="assets/work/3d-static/pencil-render-t.webp" alt="3D rendered pencil close-up" width="600" height="400" loading="lazy" decoding="async"></div><h3 class="pf-name">3D Animation & Product Visualization</h3><p class="pf-desc">We design cinematic 3D animations and photoreal product visualizations that make your product the hero — for launch campaigns, websites, ads and social media.</p><dl class="pf-stats"><div><dt>Tool</dt><dd>Maya</dd></div><div><dt>Tool</dt><dd>Blender</dd></div><div><dt>Tool</dt><dd>Keyshot</dd></div></dl><div class="pf-act"><a class="pf-btn" href="3d-animation-services"><i class="fa-regular fa-eye"></i> Learn more</a><a class="pf-sq" href="contact?service=3d" aria-label="Get in touch about 3D Animation &amp; Product Visualization"><i class="fa-regular fa-envelope"></i></a></div></article><article class="pf reveal"><div class="pf-pic"><img src="assets/work/2d-motion/moehair-2nd-poster.webp" alt="Brand film frame for a hair-care label" width="600" height="400" loading="lazy" decoding="async"></div><h3 class="pf-name">Brand Identity</h3><p class="pf-desc">We build brand identities that look sharp, feel consistent and make your business easy to recognise and remember — on screen, in print and on social.</p><dl class="pf-stats"><div><dt>Tool</dt><dd>Illustrator</dd></div><div><dt>Tool</dt><dd>Photoshop</dd></div><div><dt>Tool</dt><dd>Figma</dd></div></dl><div class="pf-act"><a class="pf-btn" href="brand-identity-design"><i class="fa-regular fa-eye"></i> Learn more</a><a class="pf-sq" href="contact?service=brand" aria-label="Get in touch about Brand Identity"><i class="fa-regular fa-envelope"></i></a></div></article><article class="pf reveal"><div class="pf-pic"><img src="assets/work/3d-motion/combo-3d-motion-poster.webp" alt="Ad creative frame" width="600" height="400" loading="lazy" decoding="async"></div><h3 class="pf-name">Meta Ads</h3><p class="pf-desc">We combine scroll-stopping creatives with proper tracking and optimization so your Facebook and Instagram ads work harder for every rupee or dollar spent.</p><dl class="pf-stats"><div><dt>Tool</dt><dd>Ads Manager</dd></div><div><dt>Tracking</dt><dd>Pixel</dd></div><div><dt>Reports</dt><dd>Analytics</dd></div></dl><div class="pf-act"><a class="pf-btn" href="meta-ads-management"><i class="fa-regular fa-eye"></i> Learn more</a><a class="pf-sq" href="contact?service=meta" aria-label="Get in touch about Meta Ads"><i class="fa-regular fa-envelope"></i></a></div></article></div>
       </div>
     </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="cta-band reveal">
-        <h2>Let's build something <span>great</span></h2>
-        <p>Have a project in mind? Whether it's a 3D campaign, brand identity or a Shopify store, our team is ready to bring it to life.</p>
-        <a class="btn" href="contact">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
   </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Work viewer">
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lb-btn lb-nav lb-prev" id="lbPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="lb-stage" id="lbMedia"></div>
+    <button class="lb-btn lb-nav lb-next" id="lbNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lb-cap"><b id="lbTitle"></b><small id="lbCat"></small></div>
+  </dialog>
 
   <div id="site-footer"></div>
 
-  <script src="layout.js"></script>
-  <script src="main.js"></script>
-  <script src="pages.js" data-page="service"></script>
+  <script src="layout.js?v=110"></script>
+  <script src="main.js?v=140"></script>
+  <script src="pages.js?v=100" data-page="service"></script>
 </body>
 </html>

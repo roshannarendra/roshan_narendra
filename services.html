@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add("js")</script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3D Animation, Motion Design, Branding & Shopify Services | ONE47</title>
   <meta name="description" content="Full-service creative and eCommerce studio in Gurgaon: 3D animation, motion design, brand identity, architectural visualization, Shopify development and Meta Ads." />
@@ -29,10 +30,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="styles.css?v=110" />
+  <link rel="stylesheet" href="pages.css?v=140" />
+  <link rel="stylesheet" href="cine.css?v=13" />
 </head>
-<body class="inner" data-nav="services">
+<body class="inner cine" data-nav="services">
   <div id="site-header"></div>
 
   <main>
@@ -46,7 +48,7 @@
     <section class="section tightb">
       <div class="wrap">
         <article class="svc reveal" id="3d-animation">
-          <a class="svc-vis vis-1" href="3d-animation-services" aria-label="3D Animation & Product Visualization"><b>01</b></a>
+          <a class="svc-vis vis-1" data-vid="assets/work/3d-motion/suono-p300-2-0.mp4" data-poster="assets/work/3d-motion/suono-p300-2-0-poster.webp" href="3d-animation-services" aria-label="3D Animation & Product Visualization"><b>01</b></a>
           <div>
             <span class="svc-tag">3D Animation & Product Visualization</span>
             <h2><a href="3d-animation-services">3D Animation & Product Visualization Services</a></h2>
@@ -57,7 +59,7 @@
           </div>
         </article>
         <article class="svc reveal" id="motion">
-          <a class="svc-vis vis-2" href="motion-design-services" aria-label="Motion Design"><b>02</b></a>
+          <a class="svc-vis vis-2" data-vid="assets/work/2d-motion/gold-4-final.mp4" data-poster="assets/work/2d-motion/gold-4-final-poster.webp" href="motion-design-services" aria-label="Motion Design"><b>02</b></a>
           <div>
             <span class="svc-tag">Motion Design</span>
             <h2><a href="motion-design-services">Motion Graphics & Explainer Animation Studio</a></h2>
@@ -68,7 +70,7 @@
           </div>
         </article>
         <article class="svc reveal" id="branding">
-          <a class="svc-vis vis-3" href="brand-identity-design" aria-label="Brand Identity"><b>03</b></a>
+          <a class="svc-vis vis-3" data-vid="assets/work/2d-motion/moehair.mp4" data-poster="assets/work/2d-motion/moehair-poster.webp" href="brand-identity-design" aria-label="Brand Identity"><b>03</b></a>
           <div>
             <span class="svc-tag">Brand Identity</span>
             <h2><a href="brand-identity-design">Brand Identity & Visual Design Services</a></h2>
@@ -132,22 +134,12 @@
         <div class="faq reveal"><details><summary>What services do you offer?</summary><p>We offer 3D animation and product visualization, motion design, brand identity, architectural visualization, Shopify development and Meta Ads management.</p></details><details><summary>Can I hire you for just one service?</summary><p>Yes. Every service stands alone, and they also work well together as a complete brand, store and marketing package.</p></details><details><summary>Do you work with clients outside India?</summary><p>Yes. We are based in Gurgaon, Delhi NCR, and work with clients worldwide, fully remotely.</p></details><details><summary>How do I get a quote?</summary><p>Send a short brief through our contact page with your goals, references and timeline, and we will reply with a suggested scope.</p></details></div>
       </div>
     </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="cta-band reveal">
-        <h2>Let's build something <span>great</span></h2>
-        <p>Have a project in mind? Whether it's a 3D campaign, brand identity or a Shopify store, our team is ready to bring it to life.</p>
-        <a class="btn" href="contact">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
   </main>
 
   <div id="site-footer"></div>
 
-  <script src="layout.js"></script>
-  <script src="main.js"></script>
-  <script src="pages.js" data-page="services"></script>
+  <script src="layout.js?v=110"></script>
+  <script src="main.js?v=140"></script>
+  <script src="pages.js?v=100" data-page="services"></script>
 </body>
 </html>

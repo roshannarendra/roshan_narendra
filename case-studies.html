@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add("js")</script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Case Studies: 3D Animation, Branding & Shopify Projects | ONE47</title>
   <meta name="description" content="Selected work for Bajaj Electricals, RM Homes, Beyond Realty and Shopify brands: 3D animation, architectural visualization, branding and eCommerce." />
@@ -27,10 +28,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="styles.css?v=110" />
+  <link rel="stylesheet" href="pages.css?v=140" />
+  <link rel="stylesheet" href="cine.css?v=13" />
 </head>
-<body class="inner" data-nav="case-studies">
+<body class="inner cine" data-nav="case-studies">
   <div id="site-header"></div>
 
   <main>
@@ -45,18 +47,9 @@
         <div class="filters" id="filters" role="tablist" aria-label="Filter case studies"></div>
         <div class="cases" id="cases"></div>
         <p class="empty" id="empty">No projects in this category yet.</p>
+        <div class="more-gallery reveal"><a class="btn ghost" href="gallery">Browse the full work gallery <i class="fa-solid fa-arrow-right"></i></a></div>
       </div>
     </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="cta-band reveal">
-        <h2>Let's build something <span>great</span></h2>
-        <p>Have a project in mind? Whether it's a 3D campaign, brand identity or a Shopify store, our team is ready to bring it to life.</p>
-        <a class="btn" href="contact">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
   </main>
 
   <dialog class="modal" id="caseModal" aria-labelledby="caseTitle">
@@ -67,7 +60,7 @@
       <h2 id="caseTitle"></h2>
       <p id="caseSummary"></p>
       <div class="tagrow" id="caseTags"></div>
-      <h4>What we delivered</h4>
+      <h3 class="modal-sub">What we delivered</h3>
       <ul class="checks one" id="caseList"></ul>
       <p class="via" id="caseVia"></p>
       <p style="margin-top:22px"><a class="btn" id="caseCta" href="contact">Start a similar project <i class="fa-solid fa-arrow-right"></i></a></p>
@@ -76,8 +69,8 @@
 
   <div id="site-footer"></div>
 
-  <script src="layout.js"></script>
-  <script src="main.js"></script>
-  <script src="pages.js" data-page="case-studies"></script>
+  <script src="layout.js?v=110"></script>
+  <script src="main.js?v=140"></script>
+  <script src="pages.js?v=100" data-page="case-studies"></script>
 </body>
 </html>

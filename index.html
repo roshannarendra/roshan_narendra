@@ -35,8 +35,8 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="styles.css?v=110" />
+  <link rel="stylesheet" href="pages.css?v=140" />
 </head>
 <body>
   <div class="bg">
@@ -152,53 +152,78 @@
 
 
 
-  <section class="seo-home" id="about-studio">
+  <section class="seo-home st2" id="about-studio" aria-labelledby="st2Title">
     <div class="wrap">
-      <span class="eyebrow reveal"><em>//</em> About the studio <em>//</em></span>
-      <h2 class="section-title reveal" style="text-align:left">Full-service <span>3D, motion, branding &amp; Shopify</span> studio</h2>
-      <div class="seo-cols reveal">
-        <div>
-          <p>ONE47 is a creative and commercial studio based in Gurgaon, Delhi NCR, serving brands worldwide. We combine <a href="3d-animation-services">3D animation and product visualization</a>, <a href="motion-design-services">motion design</a>, <a href="brand-identity-design">brand identity</a>, <a href="architectural-visualization">architectural visualization</a>, <a href="shopify-development">Shopify development</a> and <a href="meta-ads-management">Meta Ads management</a> under one roof, so the visuals that make people look are connected to the store and campaigns that make them buy.</p>
-          <p>With 4+ years of experience across fintech, enterprise security, e-commerce, real estate and fashion, we work in 13+ professional tools and have delivered for 10+ brands and agencies. Our approach is simple: clear strategy, premium craft and measurable results.</p>
-          <p>Whether you need a cinematic product animation, a brand that looks as good as your product, or a Shopify store with ads that return on spend, our team can take your project from idea to launch. <a href="contact">Tell us about your project</a>.</p>
+      <div class="st2-grid">
+        <div class="st2-copy reveal">
+          <span class="eyebrow"><em>//</em> About the studio <em>//</em></span>
+          <h2 class="st2-title" id="st2Title">One team for your <span>visuals, store &amp; ads</span></h2>
+          <p class="st2-lead">ONE47 is a full-service 3D, motion, branding and Shopify studio in Gurgaon, working with brands worldwide. The visuals that make people look, connected to the store and campaigns that make them buy.</p>
+          <ul class="st2-links" aria-label="Our services">
+            <li><a href="3d-animation-services">3D animation</a></li>
+            <li><a href="motion-design-services">Motion design</a></li>
+            <li><a href="brand-identity-design">Brand identity</a></li>
+            <li><a href="architectural-visualization">Architectural viz</a></li>
+            <li><a href="shopify-development">Shopify</a></li>
+            <li><a href="meta-ads-management">Meta Ads</a></li>
+          </ul>
+          <a class="st2-more" href="about">More about us <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-        <div class="why">
-          <div><i class="fa-solid fa-layer-group"></i><h3>One team, end to end</h3><p>Brand, visuals, store and ads built together.</p></div>
-          <div><i class="fa-solid fa-chart-line"></i><h3>Built to be measured</h3><p>Tracking and analytics from day one.</p></div>
-          <div><i class="fa-solid fa-gem"></i><h3>Production-ready craft</h3><p>Premium 3D, motion and design output.</p></div>
-          <div><i class="fa-solid fa-earth-asia"></i><h3>Global, remote-friendly</h3><p>Gurgaon-based, working worldwide.</p></div>
-        </div>
+        <ul class="st2-why reveal">
+          <li><i class="fa-solid fa-layer-group" aria-hidden="true"></i><b>One team, end to end</b><span>Brand, visuals, store and ads built together.</span></li>
+          <li><i class="fa-solid fa-chart-line" aria-hidden="true"></i><b>Built to be measured</b><span>Tracking and analytics from day one.</span></li>
+          <li><i class="fa-solid fa-gem" aria-hidden="true"></i><b>Production-ready craft</b><span>Premium 3D, motion and design output.</span></li>
+          <li><i class="fa-solid fa-earth-asia" aria-hidden="true"></i><b>Global, remote-friendly</b><span>Gurgaon-based, working worldwide.</span></li>
+        </ul>
       </div>
     </div>
   </section>
 
   <section class="services" id="services">
     <h2 class="services-title reveal">Our <span>Services</span></h2>
-    <div class="services-grid">
-      <a class="service-tile s1 dark" href="3d-animation-services">
-        <div class="service-copy"><h3>3D Animation & Product Viz</h3><p>Cinematic 3D animation and product visualizations for agencies and global brands.</p></div>
-        <span class="service-label"><span>3D Animation</span><span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></span>
-      </a>
-      <a class="service-tile s2 light" href="motion-design-services">
-        <div class="service-copy"><h3>Motion Design</h3><p>Motion graphics and explainers that turn complex ideas into clear stories.</p></div>
-        <span class="service-label"><span>Motion Design</span><span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></span>
-      </a>
-      <a class="service-tile s3 light" href="brand-identity-design">
-        <div class="service-copy"><h3>Brand Identity</h3><p>Visual identities and marketing assets with consistent quality everywhere.</p></div>
-        <span class="service-label"><span>Brand Identity</span><span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></span>
-      </a>
-      <a class="service-tile s4 dark" href="architectural-visualization">
-        <div class="service-copy"><h3>Architectural Visualization</h3><p>3D rendering for residential property marketing and real estate.</p></div>
-        <span class="service-label"><span>Architectural Viz</span><span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></span>
-      </a>
-      <a class="service-tile s5 lime" href="shopify-development">
-        <div class="service-copy"><h3>Shopify Stores Built To Sell</h3><p>End-to-end storefronts: theme, catalogue, SEO and tracking.</p></div>
-        <span class="service-label"><span>Shopify Development</span><span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></span>
-      </a>
-      <a class="service-tile s6 light" href="meta-ads-management">
-        <div class="service-copy"><h3>Meta Ads & ROAS</h3><p>Meta Pixel setup, ad creatives and campaign optimization.</p></div>
-        <span class="service-label"><span>Meta Ads</span><span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></span>
-      </a>
+    <div class="services-grid pf-list">
+      <article class="pf svc-card">
+        <div class="pf-pic"><a href="3d-animation-services" tabindex="-1" aria-hidden="true"><img src="assets/work/3d-motion/suono-p300-2-0-poster.webp" alt="3D product animation frame" loading="lazy" decoding="async" width="900" height="506"></a><button type="button" class="pf-save" aria-pressed="false" aria-label="Save 3D Animation and Product Viz"><i class="fa-regular fa-bookmark"></i></button></div>
+        <h3 class="pf-name">3D Animation &amp; Product Viz <i class="fa-solid fa-circle-check" aria-label="Specialist team"></i></h3>
+        <p class="pf-desc">Cinematic 3D animation and product visualizations for agencies and global brands.</p>
+        <dl class="pf-stats"><div><dt>Tool</dt><dd>Maya</dd></div><div><dt>Tool</dt><dd>Blender</dd></div><div><dt>Tool</dt><dd>Keyshot</dd></div></dl>
+        <a class="service-label svc-cta" href="3d-animation-services"><span>3D Animation</span><span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+      </article>
+      <article class="pf svc-card">
+        <div class="pf-pic"><a href="motion-design-services" tabindex="-1" aria-hidden="true"><img src="assets/work/2d-motion/gold-4-final-poster.webp" alt="Motion design frame for a gold cashback offer" loading="lazy" decoding="async" width="900" height="800"></a><button type="button" class="pf-save" aria-pressed="false" aria-label="Save Motion Design"><i class="fa-regular fa-bookmark"></i></button></div>
+        <h3 class="pf-name">Motion Design <i class="fa-solid fa-circle-check" aria-label="Specialist team"></i></h3>
+        <p class="pf-desc">Motion graphics and explainers that turn complex ideas into clear stories.</p>
+        <dl class="pf-stats"><div><dt>Tool</dt><dd>After Effects</dd></div><div><dt>Tool</dt><dd>Premiere</dd></div><div><dt>Tool</dt><dd>Blender</dd></div></dl>
+        <a class="service-label svc-cta" href="motion-design-services"><span>Motion Design</span><span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+      </article>
+      <article class="pf svc-card">
+        <div class="pf-pic"><a href="brand-identity-design" tabindex="-1" aria-hidden="true"><img src="assets/work/3d-static/range.webp" alt="Brand and product range render" loading="lazy" decoding="async" width="1600" height="900"></a><button type="button" class="pf-save" aria-pressed="false" aria-label="Save Brand Identity"><i class="fa-regular fa-bookmark"></i></button></div>
+        <h3 class="pf-name">Brand Identity <i class="fa-solid fa-circle-check" aria-label="Specialist team"></i></h3>
+        <p class="pf-desc">Visual identities and marketing assets with consistent quality everywhere.</p>
+        <dl class="pf-stats"><div><dt>Tool</dt><dd>Illustrator</dd></div><div><dt>Tool</dt><dd>Photoshop</dd></div><div><dt>Tool</dt><dd>Figma</dd></div></dl>
+        <a class="service-label svc-cta" href="brand-identity-design"><span>Brand Identity</span><span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+      </article>
+      <article class="pf svc-card">
+        <div class="pf-pic"><a href="architectural-visualization" tabindex="-1" aria-hidden="true"><img src="assets/work/stalls/aurolab-view01.webp" alt="Exhibition stall architectural render" loading="lazy" decoding="async" width="1600" height="900"></a><button type="button" class="pf-save" aria-pressed="false" aria-label="Save Architectural Visualization"><i class="fa-regular fa-bookmark"></i></button></div>
+        <h3 class="pf-name">Architectural Visualization <i class="fa-solid fa-circle-check" aria-label="Specialist team"></i></h3>
+        <p class="pf-desc">3D rendering for residential property marketing and real estate.</p>
+        <dl class="pf-stats"><div><dt>Tool</dt><dd>3DS Max</dd></div><div><dt>Tool</dt><dd>Maya</dd></div><div><dt>Tool</dt><dd>Keyshot</dd></div></dl>
+        <a class="service-label svc-cta" href="architectural-visualization"><span>Architectural Viz</span><span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+      </article>
+      <article class="pf svc-card">
+        <div class="pf-pic"><a href="shopify-development" tabindex="-1" aria-hidden="true"><img src="assets/work/3d-static/combo-scene-2-0.webp" alt="Product scene render for an online store" loading="lazy" decoding="async" width="1600" height="1068"></a><button type="button" class="pf-save" aria-pressed="false" aria-label="Save Shopify Stores Built To Sell"><i class="fa-regular fa-bookmark"></i></button></div>
+        <h3 class="pf-name">Shopify Stores Built To Sell <i class="fa-solid fa-circle-check" aria-label="Specialist team"></i></h3>
+        <p class="pf-desc">End-to-end storefronts: theme, catalogue, SEO and tracking.</p>
+        <dl class="pf-stats"><div><dt>Platform</dt><dd>Shopify</dd></div><div><dt>Tracking</dt><dd>Pixel</dd></div><div><dt>Design</dt><dd>Figma</dd></div></dl>
+        <a class="service-label svc-cta" href="shopify-development"><span>Shopify Development</span><span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+      </article>
+      <article class="pf svc-card">
+        <div class="pf-pic"><a href="meta-ads-management" tabindex="-1" aria-hidden="true"><img src="assets/work/3d-motion/neo-ad-poster.webp" alt="Animated ad frame for a payments app" loading="lazy" decoding="async" width="900" height="900"></a><button type="button" class="pf-save" aria-pressed="false" aria-label="Save Meta Ads and ROAS"><i class="fa-regular fa-bookmark"></i></button></div>
+        <h3 class="pf-name">Meta Ads &amp; ROAS <i class="fa-solid fa-circle-check" aria-label="Specialist team"></i></h3>
+        <p class="pf-desc">Meta Pixel setup, ad creatives and campaign optimization.</p>
+        <dl class="pf-stats"><div><dt>Tool</dt><dd>Ads Manager</dd></div><div><dt>Tracking</dt><dd>Pixel</dd></div><div><dt>Reports</dt><dd>Analytics</dd></div></dl>
+        <a class="service-label svc-cta" href="meta-ads-management"><span>Meta Ads</span><span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+      </article>
     </div>
   </section>
 
@@ -220,15 +245,6 @@
 
 
 
-
-  <section class="seo-faq" id="faq">
-    <div class="wrap">
-      <h2 class="section-title reveal">Frequently asked <span>questions</span></h2>
-      <div class="faq reveal"><details><summary>What services does ONE47 offer?</summary><p>We offer 3D animation and product visualization, motion design, brand identity design, architectural visualization, Shopify development and Meta Ads management — creative and commercial work under one roof.</p></details><details><summary>Where are you based, and do you work with international clients?</summary><p>We are based in Gurgaon, Delhi NCR, India, and work with brands, agencies and businesses around the world remotely.</p></details><details><summary>Can you handle both design and marketing for my store?</summary><p>Yes. We build the brand, create the visuals, set up the Shopify store and run Meta Ads, so everything is aligned and measured.</p></details><details><summary>What tools do you use?</summary><p>Autodesk Maya, Blender, ZBrush, Keyshot, 3DS Max, After Effects, Premiere Pro, Photoshop, Illustrator, Figma, Shopify, Meta Ads and Google Analytics.</p></details><details><summary>How do I start a project?</summary><p>Use the contact page to send a short brief with your goals, timeline and references. We will come back with a suggested scope and next steps.</p></details></div>
-      <h2 class="section-title reveal" style="margin-top:clamp(40px,6vw,72px)">Latest <span>insights</span></h2>
-      <div class="grid c3"><a class="card post reveal" href="blog-3d-product-animation-cost"><img src="assets/img/creative-tools.jpg" alt="3D rendered object on a gradient background" width="600" height="400" loading="lazy" decoding="async" /><time datetime="2026-10-10">2026-10-10</time><h3>What Affects the Cost of 3D Product Animation?</h3><p>Model complexity, length, realism and revisions all shape the price. Here is how to brief a 3D studio and get an accurate quote.</p><span class="more">Read article <i class="fa-solid fa-arrow-right"></i></span></a><a class="card post reveal" href="blog-shopify-store-setup-checklist"><img src="assets/img/ecommerce.jpg" alt="Retail checkout counter with a shop assistant and customer" width="600" height="400" loading="lazy" decoding="async" /><time datetime="2026-10-10">2026-10-10</time><h3>Shopify Store Setup Checklist: 12 Steps Before You Launch</h3><p>From theme and catalogue to SEO and Meta Pixel, here are the 12 steps to complete before you launch your Shopify store.</p><span class="more">Read article <i class="fa-solid fa-arrow-right"></i></span></a><a class="card post reveal" href="blog-meta-ads-roas-guide"><img src="assets/img/dashboard.jpg" alt="Analytics dashboard with charts on a laptop" width="600" height="400" loading="lazy" decoding="async" /><time datetime="2026-10-10">2026-10-10</time><h3>How to Improve ROAS on Meta Ads: A Practical Guide</h3><p>Fix tracking, test creatives, simplify structure and scale winners. A practical guide to higher ROAS on Facebook and Instagram.</p><span class="more">Read article <i class="fa-solid fa-arrow-right"></i></span></a></div>
-    </div>
-  </section>
 
   <section class="projects" id="projects">
     <h2 class="projects-title">Our <span>Projects</span></h2>
@@ -240,112 +256,107 @@
           <a class="project-btn" href="case-studies">Live Project</a>
         </div>
         <div class="project-grid v-a">
-          <div class="project-img i1"></div>
-          <div class="project-img i2"></div>
-          <div class="project-img i3"></div>
+          <div class="project-img"><video src="assets/work/3d-motion/hammer-watch-2-0.mp4" poster="assets/work/3d-motion/hammer-watch-2-0-poster.webp" muted loop autoplay playsinline preload="none" aria-label="Hammer watch 3D animation"></video></div>
+          <div class="project-img"><video src="assets/work/3d-motion/hammer-lifestyle.mp4" poster="assets/work/3d-motion/hammer-lifestyle-poster.webp" muted loop autoplay playsinline preload="none" aria-label="Hammer lifestyle 3D animation"></video></div>
+          <div class="project-img"><img src="assets/work/hard-surface/vinchy-t.webp" alt="3D hard-surface product render" loading="lazy" decoding="async" width="640" height="640"></div>
         </div>
       </article>
       <article class="project-card" style="--n:1">
         <div class="project-head">
           <span class="project-num">02</span>
-          <div class="project-meta"><span class="project-type">Architectural Viz</span><span class="project-name">RM Homes</span></div>
+          <div class="project-meta"><span class="project-type">Exhibition Design</span><span class="project-name">Stall Concepts</span></div>
           <a class="project-btn" href="case-studies">Live Project</a>
         </div>
         <div class="project-grid v-b">
-          <div class="project-img i1"></div>
-          <div class="project-img i2"></div>
-          <div class="project-img i3"></div>
+          <div class="project-img"><img src="assets/work/stalls/render-1-54-t.webp" alt="Exhibition stall render" loading="lazy" decoding="async" width="640" height="640"></div>
+          <div class="project-img"><img src="assets/work/stalls/render-2-57-t.webp" alt="Exhibition stall render, second view" loading="lazy" decoding="async" width="640" height="640"></div>
+          <div class="project-img"><img src="assets/work/stalls/render-3-59-t.webp" alt="Exhibition stall render, third view" loading="lazy" decoding="async" width="640" height="640"></div>
         </div>
       </article>
       <article class="project-card" style="--n:2">
         <div class="project-head">
           <span class="project-num">03</span>
-          <div class="project-meta"><span class="project-type">Branding</span><span class="project-name">Beyond Realty</span></div>
+          <div class="project-meta"><span class="project-type">Product Viz</span><span class="project-name">Moehair</span></div>
           <a class="project-btn" href="case-studies">Live Project</a>
         </div>
         <div class="project-grid v-c">
-          <div class="project-img i1"></div>
-          <div class="project-img i2"></div>
-          <div class="project-img i3"></div>
+          <div class="project-img"><img src="assets/work/3d-static/hair-shampoo-2-0-t.webp" alt="Hair-care product render" loading="lazy" decoding="async" width="640" height="640"></div>
+          <div class="project-img"><img src="assets/work/3d-static/luxx-blow-dry-cream-t.webp" alt="Blow dry cream product render" loading="lazy" decoding="async" width="640" height="640"></div>
+          <div class="project-img"><img src="assets/work/3d-static/oils-t.webp" alt="Hair oil product render" loading="lazy" decoding="async" width="640" height="640"></div>
         </div>
       </article>
       <div class="projects-hold" aria-hidden="true"></div>
     </div>
   </section>
 
-  <section class="footer-section">
-    <div class="footer-wrapper">
-      <div class="footer-left">
-        <video class="footer-left-video" autoplay muted loop playsinline preload="auto">
-          <source
-            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260503_104800_bc43ae09-f494-43e3-97d7-2f8c1692cfd7.mp4"
-            type="video/mp4"
-          />
-        </video>
+  <section class="seo-faq seo-insights" id="insights">
+    <div class="wrap">
+      <h2 class="section-title reveal">Latest <span>insights</span></h2>
+      <div class="grid c3"><article class="pf reveal"><div class="pf-pic"><img src="assets/work/3d-motion/hammer-watch-2-0-poster.webp" alt="3D animation frame of a smartwatch with a pink flower on screen" width="600" height="400" loading="lazy" decoding="async" /><button type="button" class="pf-save" aria-pressed="false" aria-label="Save What Affects the Cost of 3D Product Animation?"><i class="fa-regular fa-bookmark"></i></button></div><h3 class="pf-name">What Affects the Cost of 3D Product Animation?</h3><p class="pf-desc">Model complexity, length, realism and revisions all shape the price. Here is how to brief a 3D studio and get an accurate quote.</p><dl class="pf-stats"><div><dt>Topic</dt><dd>3D Animation</dd></div><div><dt>Published</dt><dd>10 Oct 2026</dd></div><div><dt>Type</dt><dd>Guide</dd></div></dl><div class="pf-act"><a class="pf-btn" href="blog-3d-product-animation-cost"><i class="fa-regular fa-newspaper"></i> Read article</a><a class="pf-sq" href="blog-3d-product-animation-cost" aria-label="Open What Affects the Cost of 3D Product Animation?"><i class="fa-solid fa-arrow-right"></i></a></div></article><article class="pf reveal"><div class="pf-pic"><img src="assets/work/3d-static/combo-scene-2-0.webp" alt="3D rendered product scene of hair-care bottles on a styled set" width="600" height="400" loading="lazy" decoding="async" /><button type="button" class="pf-save" aria-pressed="false" aria-label="Save Shopify Store Setup Checklist: 12 Steps Before You Launch"><i class="fa-regular fa-bookmark"></i></button></div><h3 class="pf-name">Shopify Store Setup Checklist: 12 Steps Before You Launch</h3><p class="pf-desc">From theme and catalogue to SEO and Meta Pixel, here are the 12 steps to complete before you launch your Shopify store.</p><dl class="pf-stats"><div><dt>Topic</dt><dd>Shopify</dd></div><div><dt>Published</dt><dd>10 Oct 2026</dd></div><div><dt>Type</dt><dd>Guide</dd></div></dl><div class="pf-act"><a class="pf-btn" href="blog-shopify-store-setup-checklist"><i class="fa-regular fa-newspaper"></i> Read article</a><a class="pf-sq" href="blog-shopify-store-setup-checklist" aria-label="Open Shopify Store Setup Checklist: 12 Steps Before You Launch"><i class="fa-solid fa-arrow-right"></i></a></div></article><article class="pf reveal"><div class="pf-pic"><img src="assets/work/3d-motion/hammer-lifestyle-poster.webp" alt="Animated ad frame for a payments and rewards app" width="600" height="400" loading="lazy" decoding="async" /><button type="button" class="pf-save" aria-pressed="false" aria-label="Save How to Improve ROAS on Meta Ads: A Practical Guide"><i class="fa-regular fa-bookmark"></i></button></div><h3 class="pf-name">How to Improve ROAS on Meta Ads: A Practical Guide</h3><p class="pf-desc">Fix tracking, test creatives, simplify structure and scale winners. A practical guide to higher ROAS on Facebook and Instagram.</p><dl class="pf-stats"><div><dt>Topic</dt><dd>Meta Ads</dd></div><div><dt>Published</dt><dd>10 Oct 2026</dd></div><div><dt>Type</dt><dd>Guide</dd></div></dl><div class="pf-act"><a class="pf-btn" href="blog-meta-ads-roas-guide"><i class="fa-regular fa-newspaper"></i> Read article</a><a class="pf-sq" href="blog-meta-ads-roas-guide" aria-label="Open How to Improve ROAS on Meta Ads: A Practical Guide"><i class="fa-solid fa-arrow-right"></i></a></div></article><article class="pf reveal"><div class="pf-pic"><img src="assets/work/3d-static/range.webp" alt="Branded hair-care product range render on a styled set" width="600" height="400" loading="lazy" decoding="async" /><button type="button" class="pf-save" aria-pressed="false" aria-label="Save Brand Identity Design: What You Get and How to Brief a Studio"><i class="fa-regular fa-bookmark"></i></button></div><h3 class="pf-name">Brand Identity Design: What You Get and How to Brief a Studio</h3><p class="pf-desc">A logo is only the start. Here is what a full brand identity includes, how the process works and how to brief a studio for work you can actually use.</p><dl class="pf-stats"><div><dt>Topic</dt><dd>Brand Identity</dd></div><div><dt>Published</dt><dd>25 Oct 2026</dd></div><div><dt>Type</dt><dd>Guide</dd></div></dl><div class="pf-act"><a class="pf-btn" href="blog-brand-identity-guide"><i class="fa-regular fa-newspaper"></i> Read article</a><a class="pf-sq" href="blog-brand-identity-guide" aria-label="Open Brand Identity Design: What You Get and How to Brief a Studio"><i class="fa-solid fa-arrow-right"></i></a></div></article></div>
+    </div>
+  </section>
 
-        <div class="footer-logo">
-          <img class="footer-logo-lockup" src="assets/logo-one47.png" alt="ONE47 — Everything Aligned" width="180" height="50" />
+  <section class="seo-faq" id="faq">
+    <div class="wrap">
+      <h2 class="section-title reveal">Frequently asked <span>questions</span></h2>
+      <div class="faq reveal"><details><summary>What services does ONE47 offer?</summary><p>We offer 3D animation and product visualization, motion design, brand identity design, architectural visualization, Shopify development and Meta Ads management — creative and commercial work under one roof.</p></details><details><summary>Where are you based, and do you work with international clients?</summary><p>We are based in Gurgaon, Delhi NCR, India, and work with brands, agencies and businesses around the world remotely.</p></details><details><summary>Can you handle both design and marketing for my store?</summary><p>Yes. We build the brand, create the visuals, set up the Shopify store and run Meta Ads, so everything is aligned and measured.</p></details><details><summary>What tools do you use?</summary><p>Autodesk Maya, Blender, ZBrush, Keyshot, 3DS Max, After Effects, Premiere Pro, Photoshop, Illustrator, Figma, Shopify, Meta Ads and Google Analytics.</p></details><details><summary>How do I start a project?</summary><p>Use the contact page to send a short brief with your goals, timeline and references. We will come back with a suggested scope and next steps.</p></details></div>
+    </div>
+  </section>
+
+  <section class="footer-section ft2-on">
+    <div class="ft2">
+      <div class="ft2-cta">
+        <div>
+          <p class="ft2-kick">Have a project in mind?</p>
+          <h2 class="ft2-big">Let's build it <span>together.</span></h2>
         </div>
-
-        <div class="footer-tagline-container">
-          <p class="footer-tagline">3D Designer &amp;<br /><span>Brand Manager.</span></p>
-        </div>
-
-        <div class="footer-social-row">
-          <span class="footer-social-label">Stay in touch!</span>
-          <div class="footer-social-icons">
-            <a class="social-icon" href="mailto:support@one47.online" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-            <a class="social-icon" href="tel:+919220641865" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
-            <a class="social-icon" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a class="social-icon" href="#" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-          </div>
+        <div class="ft2-cta-act">
+          <a class="btn" href="contact">Start a project <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="ft2-mail" href="mailto:support@one47.online">support@one47.online</a>
         </div>
       </div>
 
-      <div class="footer-right">
-        <div class="footer-lucky-graphic">
-          <div class="lucky-cube"><span class="lucky-cube-mark"><img src="assets/logo-47.png" alt="" width="60" height="40" /></span></div>
-          <div class="lucky-text-row">
-            <svg class="lucky-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 20 C 6 14, 10 9, 18 5" />
-              <path d="M18 5 L 12 5" />
-              <path d="M18 5 L 18 11" />
-            </svg>
-            <span class="lucky-text">Feeling lucky?</span>
+      <div class="ft2-grid">
+        <div class="ft2-brand">
+          <img class="ft2-logo" src="assets/logo-one47.png" alt="ONE47 — Everything Aligned" width="180" height="50" />
+          <p>A full-service digital agency in Gurgaon, India, for 3D animation, motion design, brand identity, Shopify and Meta Ads.</p>
+          <div class="ft2-social">
+            <a href="mailto:support@one47.online" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="tel:+919220641865" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
           </div>
         </div>
+        <nav class="ft2-col" aria-label="Services">
+          <h3>Services</h3>
+          <a href="3d-animation-services">3D Animation</a>
+          <a href="motion-design-services">Motion Design</a>
+          <a href="brand-identity-design">Brand Identity</a>
+          <a href="architectural-visualization">Architectural Viz</a>
+          <a href="shopify-development">Shopify</a>
+          <a href="meta-ads-management">Meta Ads</a>
+        </nav>
+        <nav class="ft2-col" aria-label="Company">
+          <h3>Company</h3>
+          <a href="about">About</a>
+          <a href="case-studies">Case Studies</a>
+          <a href="gallery">Gallery</a>
+          <a href="blog">Insights</a>
+          <a href="contact">Contact</a>
+        </nav>
+        <div class="ft2-col ft2-news">
+          <h3>Newsletter</h3>
+          <p>Occasional notes on 3D, branding and Shopify. No spam.</p>
+          <form class="footer-subscribe-row" id="subscribeForm" novalidate>
+            <input type="email" name="email" placeholder="Your email" aria-label="Email address" required />
+            <button type="submit">Subscribe</button>
+          </form><p class="subscribe-msg" id="subscribeMsg" role="status" aria-live="polite"></p>
+        </div>
+      </div>
 
-        <div class="footer-right-top">
-          <div class="footer-nav-cols">
-            <div class="footer-col">
-              <div class="footer-col-title">Navigation</div>
-              <a href="./">Home</a>
-              <a href="services">Services</a>
-              <a href="case-studies">Case Studies</a>
-              <a href="about">About</a>
-              <a href="contact">Contact</a>
-            </div>
-            <div class="footer-col">
-              <div class="footer-col-title">More</div>
-              <a href="about#experience">Experience</a>
-              <a href="about#skills">Skills</a>
-              <a href="blog">Insights</a>
-              <a href="terms">Terms and Condition</a>
-              <a href="privacy">Privacy Policy</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <div class="footer-copyright">© 2025 ONE47 · Gurgaon, India</div>
-          <div class="footer-cta-mini">
-            <h4>Have a project in mind?<br /><strong>Let's build it together.</strong></h4>
-            <form class="footer-subscribe-row" id="subscribeForm" novalidate>
-              <input type="email" name="email" placeholder="Enter email address" aria-label="Email address" required />
-              <button type="submit">Subscribe</button>
-            </form><p class="subscribe-msg" id="subscribeMsg" role="status" aria-live="polite"></p>
-          </div>
-        </div>
+      <div class="ft2-bottom">
+        <span>© 2025 ONE47 · Sector 57, Gurgaon, India</span>
+        <span class="ft2-legal"><a href="privacy">Privacy</a><a href="terms">Terms</a><a href="tel:+919220641865">+91 92206 41865</a></span>
       </div>
     </div>
 
@@ -356,6 +367,6 @@
     </div>
   </section>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=140"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add("js")</script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Brand Identity & Logo Design Services | ONE47</title>
   <meta name="description" content="Brand identity design for growing businesses: logos, color and type systems, promotional visuals and social assets, delivered consistently across every channel. Gurgaon, worldwide." />
@@ -29,10 +30,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="styles.css?v=110" />
+  <link rel="stylesheet" href="pages.css?v=140" />
+  <link rel="stylesheet" href="cine.css?v=13" />
 </head>
-<body class="inner" data-nav="services">
+<body class="inner cine" data-nav="services">
   <div id="site-header"></div>
 
   <main>
@@ -44,19 +46,43 @@
       <p style="margin-top:22px"><a class="btn" href="contact?service=branding">Get a free quote <i class="fa-solid fa-arrow-right"></i></a></p>
     </section>
 
-    <section class="section tightb">
-      <div class="wrap narrow">
-        <img class="hero-img" src="assets/img/swatches.jpg" alt="Brand color swatches and a tablet with design sketches, representing brand identity design" width="1200" height="800" fetchpriority="high" decoding="async" />
-        <p class="prose-p">A brand is more than a logo. It is the color, type, imagery and tone that people meet every time they see you. We design complete visual identities and then extend them into the marketing assets you actually use, so your brand looks like one confident company everywhere.</p>
-        <p class="prose-p">We have delivered brand identity, motion design, promotional visuals and social assets for premium real estate, e-commerce and fashion brands, and we pair creative work with marketing know-how so design supports growth, not just good looks.</p>
+    <section class="section tightb svc-intro">
+      <div class="wrap">
+        <div class="si-grid">
+          <figure class="si-pic reveal"><video class="si-media" src="assets/work/2d-motion/moehair-2nd.mp4" poster="assets/work/2d-motion/moehair-2nd-poster.webp" width="900" height="506" autoplay muted loop playsinline preload="none" aria-label="Branded hair-care product group render with the Moehair name"></video></figure>
+          <div class="si-copy reveal">
+            <p class="si-lead">A brand is more than a logo. We design complete visual identities, then extend them into the marketing assets you actually use.</p>
+            <ul class="si-pts"><li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><b>A full identity</b><span>Colour, type, imagery and tone working together.</span></div></li><li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><b>Assets you'll use</b><span>Promo visuals, motion and social posts.</span></div></li><li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><b>Design that supports growth</b><span>Creative paired with marketing know-how.</span></div></li></ul>
+            <p class="si-note">Delivered for premium real estate, e-commerce and fashion brands.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section tightb">
+    <section class="section tightb inc">
       <div class="wrap">
         <h2 class="section-title reveal">What's <span>included</span></h2>
         <ul class="checks wide reveal"><li>Logo & visual identity design</li><li>Color palette & typography system</li><li>Marketing & promotional visuals</li><li>Social media asset kits</li><li>Brand motion & animated logo</li><li>Consistent templates for ongoing use</li></ul>
         <p class="prose-p centered reveal">For founders launching a new brand, businesses refreshing an outdated look, and e-commerce and real-estate brands that need a premium, consistent presence.</p>
+      </div>
+    </section>
+
+    <section class="section tightb svc-work" id="svcWork" data-svc="branding">
+      <div class="wrap">
+        <h2 class="section-title reveal">Selected <span>work</span></h2>
+        <p class="work-lead reveal">A look at what we've made. <b id="svcCount">…</b> pieces in this section, from films and reels to stills. Tap anything to open it full size.</p>
+        <div id="svcFeatured" class="work-featured"></div>
+        <div id="svcReelsBlock">
+          <h3 class="work-sub">Films &amp; reels</h3>
+          <div class="reel-row" id="svcReels"></div>
+          <p class="g-more"><button type="button" class="btn ghost" id="svcReelsMore" style="display:none">Show more films</button></p>
+        </div>
+        <div id="svcStillsBlock">
+          <h3 class="work-sub">Stills &amp; renders</h3>
+          <div class="wall" id="svcWall"></div>
+          <p class="g-more"><button type="button" class="btn ghost" id="svcStillsMore" style="display:none">Show more stills</button></p>
+        </div>
+        <p class="g-more"><a class="btn" href="gallery#branding">Open the full gallery <i class="fa-solid fa-arrow-right"></i></a></p>
       </div>
     </section>
 
@@ -86,25 +112,23 @@
     <section class="section tightb">
       <div class="wrap">
         <h2 class="section-title reveal">Related <span>services</span></h2>
-        <div class="grid c3"><a class="card reveal" href="motion-design-services"><h3>Motion Design</h3><p>We turn complex ideas into clear, memorable motion — explainer animations, 3D motion graphics and social video that keep people watching.</p><span class="more">Learn more <i class="fa-solid fa-arrow-right"></i></span></a><a class="card reveal" href="shopify-development"><h3>Shopify Development</h3><p>We build Shopify stores that look premium and are structured to sell — from theme and catalogue to SEO, tracking and ads that drive return on ad spend from day one.</p><span class="more">Learn more <i class="fa-solid fa-arrow-right"></i></span></a><a class="card reveal" href="meta-ads-management"><h3>Meta Ads</h3><p>We combine scroll-stopping creatives with proper tracking and optimization so your Facebook and Instagram ads work harder for every rupee or dollar spent.</p><span class="more">Learn more <i class="fa-solid fa-arrow-right"></i></span></a></div>
+        <div class="grid c3"><article class="pf reveal"><div class="pf-pic"><img src="assets/work/3d-motion/hammer-lifestyle-poster.webp" alt="Motion frame of a wireless earbud" width="600" height="400" loading="lazy" decoding="async"></div><h3 class="pf-name">Motion Design</h3><p class="pf-desc">We turn complex ideas into clear, memorable motion — explainer animations, 3D motion graphics and social video that keep people watching.</p><dl class="pf-stats"><div><dt>Tool</dt><dd>After Effects</dd></div><div><dt>Tool</dt><dd>Premiere</dd></div><div><dt>Tool</dt><dd>Blender</dd></div></dl><div class="pf-act"><a class="pf-btn" href="motion-design-services"><i class="fa-regular fa-eye"></i> Learn more</a><a class="pf-sq" href="contact?service=motion" aria-label="Get in touch about Motion Design"><i class="fa-regular fa-envelope"></i></a></div></article><article class="pf reveal"><div class="pf-pic"><img src="assets/web/site-02.webp" alt="Online store shown on a laptop" width="600" height="400" loading="lazy" decoding="async"></div><h3 class="pf-name">Shopify Development</h3><p class="pf-desc">We build Shopify stores that look premium and are structured to sell — from theme and catalogue to SEO, tracking and ads that drive return on ad spend from day one.</p><dl class="pf-stats"><div><dt>Platform</dt><dd>Shopify</dd></div><div><dt>Tracking</dt><dd>Pixel</dd></div><div><dt>Design</dt><dd>Figma</dd></div></dl><div class="pf-act"><a class="pf-btn" href="shopify-development"><i class="fa-regular fa-eye"></i> Learn more</a><a class="pf-sq" href="contact?service=shopify" aria-label="Get in touch about Shopify Development"><i class="fa-regular fa-envelope"></i></a></div></article><article class="pf reveal"><div class="pf-pic"><img src="assets/work/3d-motion/combo-3d-motion-poster.webp" alt="Ad creative frame" width="600" height="400" loading="lazy" decoding="async"></div><h3 class="pf-name">Meta Ads</h3><p class="pf-desc">We combine scroll-stopping creatives with proper tracking and optimization so your Facebook and Instagram ads work harder for every rupee or dollar spent.</p><dl class="pf-stats"><div><dt>Tool</dt><dd>Ads Manager</dd></div><div><dt>Tracking</dt><dd>Pixel</dd></div><div><dt>Reports</dt><dd>Analytics</dd></div></dl><div class="pf-act"><a class="pf-btn" href="meta-ads-management"><i class="fa-regular fa-eye"></i> Learn more</a><a class="pf-sq" href="contact?service=meta" aria-label="Get in touch about Meta Ads"><i class="fa-regular fa-envelope"></i></a></div></article></div>
       </div>
     </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="cta-band reveal">
-        <h2>Let's build something <span>great</span></h2>
-        <p>Have a project in mind? Whether it's a 3D campaign, brand identity or a Shopify store, our team is ready to bring it to life.</p>
-        <a class="btn" href="contact">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
   </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Work viewer">
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lb-btn lb-nav lb-prev" id="lbPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="lb-stage" id="lbMedia"></div>
+    <button class="lb-btn lb-nav lb-next" id="lbNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lb-cap"><b id="lbTitle"></b><small id="lbCat"></small></div>
+  </dialog>
 
   <div id="site-footer"></div>
 
-  <script src="layout.js"></script>
-  <script src="main.js"></script>
-  <script src="pages.js" data-page="service"></script>
+  <script src="layout.js?v=110"></script>
+  <script src="main.js?v=140"></script>
+  <script src="pages.js?v=100" data-page="service"></script>
 </body>
 </html>
