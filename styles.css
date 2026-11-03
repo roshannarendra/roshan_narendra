@@ -1618,3 +1618,28 @@ body.vlb-open { overflow: hidden; }
 .vlb-stage.is-max .vlb-bar { left: 50%; right: auto; width: min(640px, calc(100% - 24px)); bottom: max(18px, env(safe-area-inset-bottom)); transform: translateX(-50%); }
 .vlb-stage.is-max.show-ui .vlb-bar { transform: translateX(-50%); }
 html.vlb-max .vlb { transition: none; }
+
+/* About the studio heading in capitals */
+.st2-title { text-transform: uppercase; letter-spacing: -.02em; }
+html body .st2-title.sans-head, html body .st2-title { text-transform: uppercase !important; }
+/* About the studio heading: same dotted display font as "Our Services" */
+html body .st2-title, html body .st2-title.sans-head { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 5.6vw, 64px); line-height: 1.1; letter-spacing: -0.04em; text-transform: uppercase !important; }
+html body .st2-title.sans-head { font-family: var(--font-display) !important; font-weight: 400 !important; letter-spacing: -0.04em !important; line-height: 1.1 !important; text-transform: uppercase !important; }
+/* About the studio: centred heading above the feature cards */
+#about-studio .st2-grid { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: clamp(24px, 4vw, 44px); }
+#about-studio .st2-copy { text-align: center; }
+#about-studio .st2-title { margin-inline: auto; text-align: center; }
+#about-studio .st2-why { width: 100%; max-width: 1000px; }
+
+/* mobile menu: email and phone as two side-by-side buttons */
+@media (max-width: 1100px) {
+  html body .mobile-menu .drawer-foot { flex-direction: row; flex-wrap: wrap; gap: 8px; margin: 18px 0 8px; }
+  html body .mobile-menu .drawer-foot a { flex: 1 1 auto; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 14px; border-radius: 999px; background: #eceef7; border: 1px solid rgba(0,13,79,.12); color: var(--pill-dark); font-size: 13px; font-weight: 600; white-space: nowrap; transition: background .25s, transform .3s var(--ease); }
+  html body .mobile-menu .drawer-foot a:hover { background: var(--lime); transform: translateY(-1px); }
+  html body .mobile-menu .drawer-foot i { width: auto; font-size: 13px; color: var(--pill-dark); }
+}
+
+/* mobile menu: no fading gradient above the Start a project button (solid edge only) */
+@media (max-width: 1100px) {
+  html body .mobile-menu > a.mobile-sign-in { box-shadow: 0 0 0 14px #fff, inset 0 0 0 1px rgba(0,13,79,.1) !important; }
+}
