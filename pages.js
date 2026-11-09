@@ -14,7 +14,7 @@
   if (page === "case-studies") {
     var IMG = function (n) { return "url(assets/img/" + n + ".jpg)"; };
     var CASES = [
-      { id: "bajaj", cat: "3d-animation", title: "Bajaj Electricals", sum: "Product visualization and 3D animation campaign for one of India's largest electricals brands.", tags: ["3D Animation", "Product Viz", "Motion"], via: "Via Nova Films", img: "url(assets/work/3d-motion/bajaj-mixer-poster.webp)", video: "assets/work/3d-motion/bajaj-mixer.mp4",
+      { id: "bajaj", cat: "3d-animation", title: "Bajaj Electricals", sum: "Product visualization and 3D animation campaign for one of India's largest electricals brands.", tags: ["3D Animation", "Product Viz", "Motion"], via: "", img: "url(assets/work/3d-motion/bajaj-mixer-poster.webp)", video: "assets/work/3d-motion/bajaj-mixer.mp4",
         list: ["Product visualization", "3D animation campaign", "Motion graphics"] },
       { id: "honeywell", cat: "3d-animation", title: "Honeywell — Secure Connection", sum: "3D motion graphics and explainer animation for enterprise security solutions.", tags: ["3D Motion", "Explainer"], via: "", img: "url(assets/work/3d-motion/honeywell-poster.webp)", video: "assets/work/3d-motion/honeywell.mp4",
         list: ["3D motion graphics", "Explainer animations", "Complex technical ideas turned into clear visuals", "Strict brand standards followed"] },

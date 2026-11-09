@@ -779,7 +779,7 @@ input:focus-visible, textarea:focus-visible, .case:focus-visible, .chip:focus-vi
   background: linear-gradient(180deg, rgba(13, 15, 28, 0.5) 0%, rgba(13, 15, 28, 0.32) 32%, rgba(13, 15, 28, 0.08) 58%, rgba(13, 15, 28, 0) 70%);
 }
 .nav-pill a:hover { opacity: 0.92; }
-.stat-icon, .eyebrow em, .svc-tag, .case-cat, .project-type, .card .n, .tl b, .tl .co, .more, .footer-social-label { color: var(--light); }
+.stat-icon, .eyebrow em, .svc-tag, .case-cat, .project-type, .card .n, .more, .footer-social-label { color: var(--light); }
 .card.light .n { color: var(--blue-1); }
 .card.light .more { color: var(--blue-1); }
 .project-type, .case-cat, .svc-tag { opacity: 0.9; }
