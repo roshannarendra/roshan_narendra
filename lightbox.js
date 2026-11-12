@@ -175,6 +175,8 @@
     closeBtn.focus();
   }
 
+  window.__openVideo = open;
+
   function close() {
     if (!root || root.hidden) return;
     if (document.fullscreenElement || document.webkitFullscreenElement) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
