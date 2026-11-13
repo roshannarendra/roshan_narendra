@@ -36,7 +36,7 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <link rel="stylesheet" href="styles.css?v=225" />
+  <link rel="stylesheet" href="styles.css?v=231" />
   <link rel="stylesheet" href="pages.css?v=211" />
 </head>
 <body>
@@ -99,32 +99,38 @@
       </p>
 
       <div class="rm-carousel" role="region" tabindex="0" aria-label="Featured reels. Drag to explore, press Enter to play."></div>
-
-      <a class="cta anim pulse" href="case-studies" style="--d: 0.4s">View our work</a>
     </main>
 
-    <footer class="stats">
-      <div class="stat anim" style="--d: 0.5s">
-        <span class="stat-icon">&lt;</span>
-        <span class="stat-value" data-target="4" data-suffix="+" data-decimals="0">4+</span>
-        <span class="stat-label">Years Experience</span>
+    <section class="stats-statement" aria-label="ONE47 in numbers">
+      <div class="stats-statement__inner">
+        <span class="eyebrow"><em>//</em> By the numbers <em>//</em></span>
+
+        <p class="stats-statement__text">
+          For
+          <span class="st-pill st-pill--accent st-pill--has-icon st-reveal" style="--st-delay:.05s">
+            <span class="st-pill__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>4+ years</span>
+          <span class="is-white">we’ve offered</span>
+          <span class="st-pill st-pill--outline st-reveal" style="--st-delay:.2s">10 services</span>
+          <span class="is-white">to</span>
+          <span class="st-pill st-pill--white st-pill--has-icon st-reveal" style="--st-delay:.35s">
+            <span class="st-pill__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>
+            </span>10+ brands</span>
+          across
+          <span class="st-pill st-pill--dashed st-reveal" style="--st-delay:.5s">6 industries.</span>
+        </p>
+
+        <div class="stats-statement__footer">
+          <span class="stats-statement__tagline">3D, motion, brand, web and ads, all under one roof.</span>
+          <a href="case-studies" class="st-btn">
+            View our work
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="stat anim" style="--d: 0.58s">
-        <span class="stat-icon">%</span>
-        <span class="stat-value" data-target="10" data-suffix="" data-decimals="0">10</span>
-        <span class="stat-label">Services</span>
-      </div>
-      <div class="stat anim" style="--d: 0.66s">
-        <span class="stat-icon">*</span>
-        <span class="stat-value" data-target="10" data-suffix="+" data-decimals="0">10+</span>
-        <span class="stat-label">Brands</span>
-      </div>
-      <div class="stat anim" style="--d: 0.74s">
-        <span class="stat-icon">#</span>
-        <span class="stat-value" data-target="6" data-suffix="" data-decimals="0">6</span>
-        <span class="stat-label">Industries</span>
-      </div>
-    </footer>
+    </section>
   </div>
 
 
@@ -365,6 +371,15 @@
     </div>
   </section>
 
-  <script src="assets/js/lenis.min.js"></script><script src="main.js?v=140"></script><script src="smooth.js?v=1"></script><script src="lightbox.js?v=7"></script><script src="reel-carousel.js?v=2"></script>
+  <script src="assets/js/lenis.min.js"></script><script src="main.js?v=140"></script><script src="smooth.js?v=1"></script><script src="lightbox.js?v=7"></script><script>
+  (function () {
+    var items = document.querySelectorAll(".st-reveal");
+    if (!("IntersectionObserver" in window)) { items.forEach(function (el) { el.classList.add("is-visible"); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("is-visible"); io.unobserve(en.target); } });
+    }, { threshold: 0.3 });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+</script><script src="reel-carousel.js?v=2"></script>
 </body>
 </html>

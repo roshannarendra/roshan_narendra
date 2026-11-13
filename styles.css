@@ -1693,3 +1693,53 @@ html body .st2-title.sans-head { font-family: var(--font-display) !important; fo
 .rm-carousel { width: min(calc(100% + 2 * var(--side)), 1320px); }
 @media (max-width: 820px) { .rm-carousel { width: calc(100% + 2 * var(--side)); } }
 .rm-carousel { margin-left: 0; margin-right: 0; }
+
+/* ---------- hero: "by the numbers" statement (replaces the four stat counters) ---------- */
+.stats-statement { --st-accent: var(--lime); --st-bg: #0d0f1c; --st-text: #fff; --st-muted: #8b91a6; --st-subtle: #a3a9bd; --st-line: rgba(255,255,255,.12);
+  position: relative; z-index: 1; width: 100%; max-width: 1200px; padding: clamp(36px, 6vw, 72px) 0 clamp(8px, 2vw, 24px); color: var(--st-text); font-family: var(--font-sans); text-align: left; }
+.stats-statement__inner { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(26px, 4vw, 48px); }
+.stats-statement__text { margin: 0; font-size: clamp(30px, 5.2vw, 62px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.38; color: var(--st-muted); }
+.stats-statement__text .is-white { color: var(--st-text); }
+.st-pill { display: inline-flex; align-items: center; gap: 0.18em; vertical-align: middle; height: 1.22em; padding: 0 0.42em; border-radius: 999px; white-space: nowrap; line-height: 1; transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+.st-pill:hover { transform: translateY(-4px) rotate(-1.5deg); }
+.st-pill--has-icon { padding-left: 0.22em; }
+.st-pill__icon { width: 0.84em; height: 0.84em; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.st-pill__icon svg { width: 0.4em; height: 0.4em; }
+.st-pill--accent { background: var(--st-accent); color: #000d4f; }
+.st-pill--accent .st-pill__icon { background: #000d4f; color: var(--st-accent); }
+.st-pill--outline { border: 2px solid var(--st-text); color: var(--st-text); }
+.st-pill--white { background: var(--st-text); color: #000d4f; }
+.st-pill--white .st-pill__icon { background: #000d4f; color: var(--st-text); }
+.st-pill--dashed { border: 2px dashed var(--st-accent); color: var(--st-accent); }
+.stats-statement__footer { width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding-top: 28px; border-top: 1px solid var(--st-line); }
+.stats-statement__tagline { font-size: 17px; color: var(--st-subtle); }
+.st-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 32px; border-radius: 999px; background: var(--st-accent); color: #000d4f; font-weight: 700; font-size: 17px; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease; }
+.st-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(227,255,59,.35); }
+.st-btn:focus-visible { outline: 2px solid var(--st-accent); outline-offset: 4px; }
+.st-btn svg { transition: transform .25s ease; }
+.st-btn:hover svg { transform: translateX(4px); }
+.st-reveal { opacity: 0; transform: translateY(24px); filter: blur(8px); transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1), filter .8s cubic-bezier(.2,.8,.2,1); transition-delay: var(--st-delay, 0s); }
+.st-reveal.is-visible { opacity: 1; transform: none; filter: none; }
+.st-reveal.is-visible:hover { transition-delay: 0s; transform: translateY(-4px) rotate(-1.5deg); }
+@media (prefers-reduced-motion: reduce) { .st-reveal { opacity: 1; transform: none; filter: none; transition: none; } .st-pill, .st-btn, .st-btn svg { transition: none; } }
+@media (max-width: 600px) { .stats-statement__footer { flex-direction: column; align-items: flex-start; } .st-btn { width: 100%; } }
+/* hero background fades out at the bottom so it never ends in a hard edge */
+.page:has(.rm-carousel)::after { -webkit-mask-image: linear-gradient(180deg, #000 0, #000 70%, transparent 100%); mask-image: linear-gradient(180deg, #000 0, #000 70%, transparent 100%); }
+
+/* ---------- type rules, same as the rest of the site ---------- */
+/* hero headline: pixel face with normal tracking on every screen (it was squeezed to -0.09em on phones, so the dots collided) */
+html body .headline, html body .headline .line { letter-spacing: -0.04em; line-height: 1.12; }
+/* long statement text follows the "long lines use the text face" rule: Inter 600, -0.03em */
+.stats-statement__text { font-weight: 600; letter-spacing: -0.03em; }
+.st-btn { font-weight: 600; font-size: 16px; }
+.stats-statement__eyebrow { font-family: var(--font-sans); }
+/* About page stickers are short headings, so they use the pixel face like the other short headings */
+.ab .tag { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.04em; line-height: 1.12; }
+.ab .tag.big { text-transform: uppercase; }
+
+/* "By the numbers" sentence in the site's heading font (pixel face, capitals) */
+html body .stats-statement__text { font-family: var(--font-display); font-weight: 400; font-size: clamp(24px, 4.6vw, 54px); letter-spacing: -0.04em; line-height: 1.32; text-transform: uppercase; }
+html body .stats-statement__text .st-pill { font-family: var(--font-display); }
+html body .stats-statement__text { font-size: clamp(28px, 5.4vw, 60px); }
+/* hero headline in capitals, like the other pixel-face headings (Our Services, About the studio) */
+html body .headline, html body .headline .line { text-transform: uppercase; }
