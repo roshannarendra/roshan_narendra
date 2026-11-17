@@ -226,8 +226,8 @@
 
 
   /* =============== Work media: shared helpers (gallery + service pages) =============== */
-  var SVC_LABEL = { "3d-animation": "3D Animation & Product Viz", motion: "Motion Design", branding: "Brand Identity", architectural: "Architectural Visualization" };
-  var SVC_ORDER = ["3d-animation", "motion", "branding", "architectural"];
+  var SVC_LABEL = { "3d-animation": "3D Animation & Product Viz", motion: "Motion Design", branding: "Brand Identity", architectural: "Architectural Visualization", shopify: "Website Development" };
+  var SVC_ORDER = ["3d-animation", "motion", "branding", "architectural", "shopify"];
   function fmt(s) { return s >= 60 ? Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0") : "0:" + String(s).padStart(2, "0"); }
   function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;"); }
   function card(m, i) {
@@ -353,7 +353,7 @@
     grid.addEventListener("click", function (e) { var b = e.target.closest(".g-item"); if (b && v) v.open(parseInt(b.getAttribute("data-i"), 10)); });
     more.addEventListener("click", function () { render(false); });
 
-    fetch("assets/work/manifest.json?v=5").then(function (r) { return r.json(); }).then(function (data) {
+    fetch("assets/work/manifest.json?v=12").then(function (r) { return r.json(); }).then(function (data) {
       // videos first inside each service, then images
       items = data.slice().sort(function (a, b) {
         return SVC_ORDER.indexOf(a.svc) - SVC_ORDER.indexOf(b.svc) || (a.type === b.type ? 0 : a.type === "video" ? -1 : 1);
@@ -444,7 +444,7 @@
       host.addEventListener("keydown", function (e) { var s = e.target.closest && e.target.closest(".w-sound"); if (s && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); e.stopPropagation(); toggleSound(s); } }, true);
       function watch(root) { if (io2) $$("video", root).forEach(function (v) { io2.observe(v); }); }
 
-      fetch("assets/work/manifest.json?v=5").then(function (r) { return r.json(); }).then(function (data) {
+      fetch("assets/work/manifest.json?v=12").then(function (r) { return r.json(); }).then(function (data) {
         var mine = data.filter(function (m) { return m.svc === sid; });
         var vids = mine.filter(function (m) { return m.type === "video"; });
         var imgs = mine.filter(function (m) { return m.type === "image"; });
