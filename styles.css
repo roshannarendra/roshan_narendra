@@ -15,9 +15,8 @@
   --trust-bg: #000d4f;
   --trust-border: rgba(255, 255, 255, 0.4);
   --trust-text: #dee0ed;
-  --font-sans: "Satoshi", "Segoe UI", system-ui, sans-serif;
-  --font-accent: "Clash Display", "Satoshi", "Segoe UI", system-ui, sans-serif;
-  --font-display: "BubbledotICG-FinePos", monospace;
+  --font-sans: "Satoshi", "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Clash Display", "Satoshi", system-ui, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -1781,10 +1780,25 @@ html body .projects.is-stack { padding: 0; }
 #insights .pf-name { min-height: 2.6em; }
 #insights .pf-desc { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; min-height: 4.5em; }
 
-/* ---------- type system: BubbledotICG-FinePos for headings, Clash Display for styling, Satoshi for body ---------- */
-body { font-family: var(--font-sans); }
-html body :is(.btn, .cta, .st-btn, .pf-btn, .ab-cta, .sign-in, .mobile-sign-in, .nav-pill a, .nav-pill button, .chip, .chip-n, .eyebrow, .svc-tag, .case-cat, .trust-pill, .service-label, .service-label span, .pf-name, .project-name, .project-type:not(.project-title), h3, .uc h3, .proc-step h3, .cs-head h3, .cs-num, .cs-nav a, .cs-stat b, .cs-principles b, .cs-principles span, .note strong, .note b, .vlb-pill, .rm-pill, .g-dur, .w-badge, .vlb-time, .mega b, .m-sub a span, .mobile-menu .drawer-foot a, .stats-statement__eyebrow, .ab-h1, .ab-line, .si-pts b, .checks li, .work-sub, .g-cap b, .footer-col h4, .footer-heading, .tools-l, .chips span, .pf-stats dd, .pf-save, .crumbs) {
-  font-family: var(--font-accent);
-}
-.ab-h1 { font-weight: 600; letter-spacing: -0.03em; }
-.pf-name, h3 { font-weight: 600; letter-spacing: -0.01em; }
+/* ---------- type: Clash Display for headings, Satoshi for everything else ---------- */
+html body .headline, html body .headline .line,
+html body .services-title, html body .projects-title, html body .section-title, html body .page-hero h1,
+html body .st2-title, html body .st2-title.sans-head, html body .stats-statement__text, html body .stats-statement__text .st-pill,
+html body .projects .project-type.project-title, html body .ab .tag, html body .cta-band h2, html body .work-sub,
+html body .ft2-big, html body .footer-cta-mini h4, html body .ab-h1 { font-family: var(--font-display) !important; font-weight: 600 !important; letter-spacing: -0.02em; }
+html body .project-num, html body .svc-vis b, html body .card .n, html body .proc-n, html body .metrics strong { font-family: var(--font-display); font-weight: 600; }
+html body .ab-h1 { line-height: 1.04; }
+body, button, input, textarea, select { font-family: var(--font-sans); }
+
+/* Clash Display needs normal letter-spacing (the old negative tracking was made for the pixel font) */
+html body :is(h1, h2, h3, h4, .headline, .headline .line, .services-title, .projects-title, .section-title, .st2-title, .stats-statement__text, .stats-statement__text *, .project-num, .project-type, .project-title, .footer-col-title, .footer-social-label, .lucky-text, .ab-h1, .ab-h1 *, .ab .tag, .tag, .cta-band h2, .work-sub, .ft2-big, .footer-cta-mini h4, .svc-vis b, .card .n, .proc-n, .metrics strong, .mobile-menu a, .nav-pill a, .submenu a b, .mega a b) { letter-spacing: 0 !important; }
+html body :is(.headline, .headline .line, .services-title, .projects-title, .section-title, .page-hero h1, .st2-title, .ab-h1, .cta-band h2, .ft2-big) { letter-spacing: 0.005em !important; }
+/* headings never run off the screen: they wrap instead */
+html body :is(h1, h2, h3, .headline .line, .services-title, .projects-title, .section-title, .st2-title, .ab-h1, .ab-h1 span, .page-hero h1, .project-title) { max-width: 100%; overflow-wrap: break-word; white-space: normal; }
+html body .headline .line { white-space: nowrap; font-size: min(1em, 11.4vw); }
+html body :is(h1, h2, .section-title, .page-hero h1) { text-wrap: balance; }
+@media (max-width: 380px) { html body .headline { font-size: 7.9vw !important; } }
+/* hero headline always fits its own width, on every screen */
+.hero { container-type: inline-size; }
+html body .headline { font-size: min(clamp(30px, min(8.6vw, 15vh), 112px), 9.7cqw) !important; }
+@media (max-width: 380px) { html body .headline { font-size: min(clamp(30px, min(8.6vw, 15vh), 112px), 9.7cqw) !important; } }
