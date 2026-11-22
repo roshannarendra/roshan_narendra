@@ -15,7 +15,8 @@
   --trust-bg: #000d4f;
   --trust-border: rgba(255, 255, 255, 0.4);
   --trust-text: #dee0ed;
-  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-sans: "Satoshi", "Segoe UI", system-ui, sans-serif;
+  --font-accent: "Clash Display", "Satoshi", "Segoe UI", system-ui, sans-serif;
   --font-display: "BubbledotICG-FinePos", monospace;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -1763,3 +1764,27 @@ html body .projects.is-stack { padding: 0; }
 @media (max-width: 560px) { .svc-card .pf-name.pf-name--one { white-space: nowrap; font-size: min(13px, 2.7vw); letter-spacing: -0.02em; } }
 /* Latest Insights: a playing loop inside a blog card */
 #insights .pf-pic video { display: block; width: 100%; height: auto; border-radius: inherit; background: #14172b; }
+
+/* Latest Insights: topic, date and type as compact chips instead of table rows */
+#insights .pf-stats { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 2px 0; padding: 0; }
+#insights .pf-stats div { display: inline-flex; padding: 0; border: 0 !important; }
+#insights .pf-stats dt { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+#insights .pf-stats dd { order: 0; margin: 0; padding: 6px 11px; border-radius: 99px; border: 1px solid rgba(255,255,255,.2); font: 600 11.5px/1 var(--font-sans); letter-spacing: .01em; color: #fff; white-space: nowrap; }
+#insights .pf-stats div:first-child dd { background: var(--lime); border-color: var(--lime); color: #000d4f; }
+#insights .pf-stats div:last-child dd { background: rgba(255,255,255,.08); }
+
+/* Latest Insights: square media and cards of identical size */
+#insights .grid.c3:has(.pf) { align-items: stretch; }
+#insights .grid.c3:has(.pf) > .pf { display: flex; flex-direction: column; height: 100%; }
+#insights .pf-pic { aspect-ratio: 1 / 1; }
+#insights .pf-pic img, #insights .pf-pic video { width: 100%; height: 100%; object-fit: cover; display: block; }
+#insights .pf-name { min-height: 2.6em; }
+#insights .pf-desc { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; min-height: 4.5em; }
+
+/* ---------- type system: BubbledotICG-FinePos for headings, Clash Display for styling, Satoshi for body ---------- */
+body { font-family: var(--font-sans); }
+html body :is(.btn, .cta, .st-btn, .pf-btn, .ab-cta, .sign-in, .mobile-sign-in, .nav-pill a, .nav-pill button, .chip, .chip-n, .eyebrow, .svc-tag, .case-cat, .trust-pill, .service-label, .service-label span, .pf-name, .project-name, .project-type:not(.project-title), h3, .uc h3, .proc-step h3, .cs-head h3, .cs-num, .cs-nav a, .cs-stat b, .cs-principles b, .cs-principles span, .note strong, .note b, .vlb-pill, .rm-pill, .g-dur, .w-badge, .vlb-time, .mega b, .m-sub a span, .mobile-menu .drawer-foot a, .stats-statement__eyebrow, .ab-h1, .ab-line, .si-pts b, .checks li, .work-sub, .g-cap b, .footer-col h4, .footer-heading, .tools-l, .chips span, .pf-stats dd, .pf-save, .crumbs) {
+  font-family: var(--font-accent);
+}
+.ab-h1 { font-weight: 600; letter-spacing: -0.03em; }
+.pf-name, h3 { font-weight: 600; letter-spacing: -0.01em; }

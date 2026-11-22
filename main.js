@@ -151,13 +151,6 @@ window.addEventListener("resize", fitWatermark);
   });
 })();
 
-// Long headings read better in the text face; keep the pixel face for short lines (4 words or fewer)
-(function () {
-  document.querySelectorAll(".section-title, .page-hero h1, .seo-home h2").forEach(function (h) {
-    if (h.textContent.trim().split(/\s+/).length > 4) h.classList.add("sans-head");
-  });
-})();
-
 // Header: add a backdrop once the page scrolls
 (function () {
   function onScroll() { document.body.classList.toggle("scrolled", window.scrollY > 8); }
